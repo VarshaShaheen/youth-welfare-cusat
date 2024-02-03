@@ -1,32 +1,59 @@
 <!--==========================
     Header
   ============================-->
+{% load static %}
 <header id="header">
     <div class="container">
 
         <div id="logo" class="pull-left">
-            <h1><a href="#main">MARIC<span>o</span>n&nbsp;2<span>0</span>23</a></h1>
-            <!--        <a href="#intro" class="scrollto"><img src="img/logo.png" alt="" title=""></a>-->
+            <a href="#intro" class="scrollto"><img src="{% static 'app/img/logo/cusat.png' %}" alt="" title=""></a>
+            <a href="#intro" class="scrollto header-logo"><img src="{% static 'app/img/logo/logo.png' %}" alt="" title=""></a>
         </div>
         <nav id="nav-menu-container" class="topnav">
             <div class="nav-menu">
                 <a href="index.html">Home</a>
-                <a href="background.html">Background</a>
-                <a href="#speakers">Conference</a>
                 <a>
                     <div class="dropdown">
-                        <button class="dropbtn">Committee<i style="margin-left: 3px;" class="fa fa-angle-down"></i></button>
+                        <button class="dropbtn">About<i style="margin-left: 3px;" class="fa fa-angle-down"></i></button>
                         <div class="dropdown-content">
-                            <a href="#">Advisory</a>
-                            <a href="#">Scientific Program</a>
-                            <a href="#">Organising</a>
+                            <a href="#">Department</a>
+                            <a href="#">Director</a>
                         </div>
                     </div>
                 </a>
-                <a href="#venue">Accepted Abstracts</a>
-                <a href="#hotels">Contact</a>
-                <a href="feedback.html">Feedback</a>
-                <a href="#sponsors">Login</a>
+                <a>
+                    <div class="dropdown">
+                        <button class="dropbtn">Programme<i style="margin-left: 3px;" class="fa fa-angle-down"></i></button>
+                        <div class="dropdown-content">
+                            <a href="#">Current Programs</a>
+                            <a href="#">Events</a>
+                            <a href="#">News</a>
+                            <a href="#">Feedback</a>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">Courses or training</a>
+                <a>
+                    <div class="dropdown">
+                        <button class="dropbtn">Campus Activities<i style="margin-left: 3px;" class="fa fa-angle-down"></i></button>
+                        <div class="dropdown-content">
+                            <a href="#">Campus Clubs</a>
+                            <a href="#">NSS</a>
+                            <a href="#">EBSB</a>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">University Union</a>
+                <a href="#">Student Counselling Services</a>
+                <a href="#">Annual Reports</a>
+                <a href="#">Photo Gallery</a>
+                <a href="#">Essential Contacts</a>
+                <a href="#">Grace Marks</a>
+                <a href="#">Student Aid Fund</a>
+                <a href="#">Anti Ragging</a>
+                <a href="#">University Orders</a>
+                <a href="#">Alumni</a>
+                <a href="#">Contact</a>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                     <i class="fa fa-bars"></i>
                 </a>
