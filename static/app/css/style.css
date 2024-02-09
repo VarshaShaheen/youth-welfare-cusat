@@ -620,6 +620,13 @@ body.mobile-nav-active #mobile-nav-toggle {
 .news-heading{
   font-weight: bold;
 }
+
+.event-image{
+  width: 500px;
+  height: 388px;
+  object-fit: cover;
+}
+
 @-webkit-keyframes pulsate-btn {
   0% {
     -webkit-transform: scale(0.6, 0.6);
