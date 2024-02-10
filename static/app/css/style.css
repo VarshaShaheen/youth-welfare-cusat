@@ -985,27 +985,38 @@ body.mobile-nav-active #mobile-nav-toggle {
   border: 1px solid #e0e5fa;
   background: #fff;
   margin-bottom: 30px;
+  width: 350px;
 }
 
 #hotels .hotel:hover .hotel-img img {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
-
-#hotels .hotel-img {
+#hotels .hotel-img{
   overflow: hidden;
-  margin-bottom: 15px;
+}
+#hotels .hotel-img img {
+  overflow: hidden;
+  width: 350px;
+  height: 260px;
+  object-fit: cover;
 }
 
 #hotels .hotel-img img {
   transition: 0.3s ease-in-out;
 }
-
-#hotels h3 {
+#hotels .hotel-title{
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#hotels .hotel-title h3 {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 5px;
   padding: 0 20px;
+  margin-top: 5px;
 }
 
 #hotels a {

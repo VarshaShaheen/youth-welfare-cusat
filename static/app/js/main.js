@@ -60,7 +60,7 @@ jQuery(document).ready(function( $ ) {
       'id': ''
     });
     $('body').append($mobile_nav);
-    $('body').prepend('<button type="button" id="mobile-nav-toggle"><i class="fa fa-bars"></i></button>');
+    $('body').prepend('<button type="button" id="mobile-nav-toggle"></button>');
     $('body').append('<div id="mobile-body-overly"></div>');
     $('#mobile-nav').find('.menu-has-children').prepend('<i class="fa fa-chevron-down"></i>');
 
@@ -147,11 +147,12 @@ jQuery(document).ready(function( $ ) {
 
 });
 /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-function myFunction() {
-  var x = document.getElementById("nav-menu-container");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
+
+ function myFunction() {
+      var x = document.getElementById("nav-menu-container");
+      if (x.className === "topnav") {
+      x.className += " responsive";
+   } else {
     x.className = "topnav";
   }
 }
