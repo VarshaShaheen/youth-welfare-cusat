@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ programme.name }}{% endblock %}
+
+{% block content %}
+    <main id="main" class="main-page">
+        <section id="speakers-details" class="wow fadeIn">
+            <div class="container">
+                    <div class="section-header">
+                        <h2>{{ programme.name }}</h2>
+                        <p>Organised by</p>
+                        <p>{{ programme.organisers }}</p>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src='{{ programme.report.url }}' class="img-fluid"
+                                 alt="director">
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="details mt-4">
+                                <p>Date: {{ programme.date }}</p>
+                                <p>Time: {{ programme.time }}</p>
+                                <a href="{{ programme.registration_link}}">
+                                    <button class="about-btn mt-3">
+                                        Register Here
+                                    </button>
+                                </a>
+                                <p>{{ programme.description|safe }}</p>
+                            </div>
+                        </div>
+
+                    </div>
+            </div>
+        </section>
+
+    </main>
+{% endblock %}

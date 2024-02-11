@@ -67,3 +67,19 @@ class Director(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class CurrentProgramme(models.Model):
+    name = models.CharField(max_length=255)
+    date = models.CharField(max_length=255, null=True, blank=True)
+    time = models.CharField(max_length=255, null=True, blank=True)
+    report = models.FileField(upload_to='programme_reports/', null=True, blank=True)  # Assuming PDFs can be optional
+    registration_link = models.URLField(max_length=200, null=True, blank=True)
+    organisers = models.CharField(max_length=255, null=True, blank=True)
+    description = CKEditor5Field(config_name='extends', null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('current_programme_detail', kwargs={'pk': self.pk})

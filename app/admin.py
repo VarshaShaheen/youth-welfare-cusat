@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import NewsAndEvent, Event, Testimonial, NewsItem, Director
+from .models import NewsAndEvent, Event, Testimonial, NewsItem, Director, CurrentProgramme
 
 
 @admin.register(NewsAndEvent)
@@ -25,3 +25,8 @@ class TestimonialAdmin(admin.ModelAdmin):
 @admin.register(Director)
 class DirectorAdmin(admin.ModelAdmin):
     list_display = ('name', 'position')
+
+
+@admin.register(CurrentProgramme)
+class CurrentProgrammeAdmin(admin.ModelAdmin):
+    list_display = ('name', 'date')

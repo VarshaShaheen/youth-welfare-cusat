@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import NewsAndEvent, Event, Testimonial, NewsItem, Director
+from .models import NewsAndEvent, Event, Testimonial, NewsItem, Director, CurrentProgramme
 
 
 def index(request):
@@ -29,3 +29,13 @@ def about_department(request):
 def about_director(request):
     directors = Director.objects.all()
     return render(request, 'app/director.html', {'directors': directors})
+
+
+def current_program(request):
+    programs = CurrentProgramme.objects.all()
+    return render(request, 'app/programme/current_program.html', {'programs': programs})
+
+
+def program_detail(request, pk):
+    programme = get_object_or_404(CurrentProgramme, pk=pk)
+    return render(request, 'app/programme/program_detail.html', {'programme': programme})
