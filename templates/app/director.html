@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Department{% endblock %}
+
+{% block content %}
+    <div id="header"></div>
+    <main id="main" class="main-page">
+        <section id="speakers-details" class="wow fadeIn">
+            <div class="container">
+                {% for director in directors %}
+                    <div class="section-header">
+                        <h2>{{ director.name }}</h2>
+                        <p>{{ director.position }}</p>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src='{{ director.image.url }}' class="img-fluid"
+                                 alt="director">
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="details">
+                                <div class="social mt-4">
+                                    <a href="{{ director.twitter }}"><i class="fa fa-twitter"></i></a>
+                                    <a href="{{ director.facebook }}"><i class="fa fa-facebook"></i></a>
+                                    <a href="{{ director.google }}"><i class="fa fa-google-plus"></i></a>
+                                    <a href="{{ director.linkedin }}"><i class="fa fa-linkedin"></i></a>
+                                </div>
+                                <p>{{ director.about|safe }}</p>
+                                <a href="{{ director.biodata.url }}">
+                                    <button class="about-btn mt-3">
+                                        Detailed Biodata
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row mt-5">
+                        <div class="col-md-12">
+                            <h3 class="heading-dept">Contact Details</h3>
+                            <div class="details mt-3">
+                                <p><i class="fa fa-phone"></i> <strong>Phone: </strong> {{ director.phone }}</p>
+                                <p><i class="fa fa-envelope"></i> <strong>Email: </strong> {{ director.email }}</p>
+                                <p><i class="fa fa-location-arrow"></i> <strong>Address:</strong> {{ director.address|safe }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+            </div>
+        </section>
+
+    </main>
+{% endblock %}

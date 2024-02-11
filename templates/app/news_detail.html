@@ -1,6 +1,16 @@
-<div class="news-item-detail">
-    <img src="{{ news_item.image.url }}" alt="{{ news_item.title }}" class="img-fluid">
-    <h1>{{ news_item.title }}</h1>
-    <p>Posted by {{ news_item.posted_by }} on {{ news_item.date_posted }}</p>
-    <p>{{ news_item.full_description }}</p>
+{% extends 'base.html' %}
+
+{% block title %}News Detail{% endblock %}
+{% block content %}
+<div class="container mt-5 news-container">
+    <div class="row">
+        <div class="col-12 mt-4">
+            <img src="{{ news_item.image.url }}" alt="{{ news_item.title }}" class="news-image img-fluid mt-5">
+            <h1 class="mt-5">{{ news_item.title }}</h1>
+            <p>Posted by {{ news_item.posted_by }} on {{ news_item.date_posted|date:"F d, Y" }}</p>
+            <p>{{ news_item.full_description }}</p>
+        </div>
+    </div>
 </div>
+{% endblock %}
+ 

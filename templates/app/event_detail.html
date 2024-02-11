@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Event Details - {{ event.name }}{% endblock %}
+
+{% block content %}
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-12" style="margin-top: 70px">
+            <!-- Event Name -->
+            <h2 class="text-center mb-3">{{ event.name }}</h2>
+
+            <!-- Event Cover Image -->
+            <img src="{{ event.cover_image.url }}" alt="{{ event.name }}" class="img-fluid mb-3" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;">
+
+            <!-- Event Details -->
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text"><strong>Date:</strong> {{ event.date }}</p>
+                    <p class="card-text"><strong>Time:</strong> {{ event.time }}</p>
+                    <p class="card-text"><strong>Location:</strong> {{ event.location }}</p>
+                    <p class="card-text"><strong>Description:</strong> {{ event.description|safe }}</p>
+                    <!-- Registration Link -->
+                    {% if event.registration_link %}
+                        <a href="{{ event.registration_link }}" class="about-btn">Submit Application</a>
+                    {% else %}
+                        <p class="text-muted">Registration is not available at the moment.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

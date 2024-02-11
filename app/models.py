@@ -49,3 +49,21 @@ class NewsItem(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Director(models.Model):
+    name = models.CharField(max_length=200, null=True, blank=True)
+    image = models.ImageField(upload_to='director_image/')
+    position = models.CharField(max_length=200, null=True, blank=True)
+    about = CKEditor5Field(config_name='extends', null=True, blank=True)
+    biodata = models.FileField(upload_to='director/portfolio')
+    phone = models.CharField(max_length=200, null=True, blank=True)
+    address = CKEditor5Field(config_name='extends', null=True, blank=True)
+    email = models.EmailField(max_length=200, null=True, blank=True)
+    facebook = models.URLField(max_length=200, null=True, blank=True)
+    twitter = models.URLField(max_length=200, null=True, blank=True)
+    linkedin = models.URLField(max_length=200, null=True, blank=True)
+    google = models.URLField(max_length=200, null=True, blank=True)
+
+    def __str__(self):
+        return self.name

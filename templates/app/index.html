@@ -115,6 +115,8 @@
 
         </div>
     </section>
+
+{#event section#}
     <section id="speakers" class="wow fadeInUp">
         <div class="container">
             <div class="section-header">
@@ -136,6 +138,7 @@
                         </div>
                     </div>
                 {% endfor %}
+            
 
                 {#                <div class="col-lg-4 col-md-6">#}
                 {#                    <div class="speaker">#}
@@ -152,11 +155,13 @@
                 {#                        </div>#}
                 {#                    </div>#}
                 {#                </div>#}
+            
             </div>
         </div>
 
     </section>
 
+{#testimonial section#}
     <div class="section-header">
         <h2>Testimonials</h2>
     </div>
@@ -172,7 +177,35 @@
             </figure>
         {% endfor %}
     </section>
+{#testimonial end#}
 
+{#News Section#}
+ <section id="hotels" class="section-with-bg wow fadeInUp">
+
+        <div class="container">
+            <div class="section-header">
+                <h2>News</h2>
+            </div>
+
+            <div class="row">
+
+                {% for news_item in news_items %}
+                    <div class="col-lg-4 col-md-6">
+                        <div class="hotel">
+                            <div class="hotel-img">
+                                <img src="{{ news_item.image.url }}" alt="{{ news_item.title }}" >
+                            </div>
+                            <div class="hotel-title">
+                               <h3><a href="{% url 'news_detail' pk=news_item.pk %}">{{ news_item.title }}</a></h3> 
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+{#news end#}
 
     {#    <!--==========================#}
     {#      Schedule Section#}
@@ -538,35 +571,9 @@
     {#    </section>#}
     {##}
     <!--==========================
-      Hotels Section
+      News Section
     ============================-->
-    <section id="hotels" class="section-with-bg wow fadeInUp">
-
-        <div class="container">
-            <div class="section-header">
-                <h2>Hotels</h2>
-                <p>Her are some nearby hotels</p>
-            </div>
-
-            <div class="row">
-
-                {% for news_item in news_items %}
-                    <div class="col-lg-4 col-md-6">
-                        <div class="hotel">
-                            <div class="hotel-img">
-                                <img src="{{ news_item.image.url }}" alt="{{ news_item.title }}" >
-                            </div>
-                            <div class="hotel-title">
-                               <h3><a href="{% url 'news_detail' pk=news_item.pk %}">{{ news_item.title }}</a></h3> 
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
-
-            </div>
-        </div>
-
-    </section>
+   
 
     <!--==========================
       Sponsors Section
