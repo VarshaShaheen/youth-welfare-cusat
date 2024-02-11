@@ -29,19 +29,16 @@
                         </button>
                         <div class="dropdown-content">
                             <a href="{% url 'current_program' %}">Current Programs</a>
-                            <a href="#">Events</a>
-                            <a href="#">News</a>
-                            <a href="#">Feedback</a>
                         </div>
                     </div>
                 </a>
+                <a href="{% url 'annual_reports' %}">Annual Reports</a>
                 <a>
                     <div class="dropdown">
                         <button class="dropbtn">Academics<i style="margin-left: 3px;" class="fa fa-angle-down"></i>
                         </button>
                         <div class="dropdown-content">
                             <a href="#">Courses or training</a>
-                            <a href="#">Annual Reports</a>
                             <a href="#">Grace Marks</a>
                             <a href="#">Student Aid Fund</a>
                         </div>
@@ -52,8 +49,8 @@
                         <button class="dropbtn">Campus Activities<i style="margin-left: 3px;"
                                                                     class="fa fa-angle-down"></i></button>
                         <div class="dropdown-content">
-                            <a href="#">Campus Clubs</a>
-                            <a href="#">NSS</a>
+                            <a href="{% url 'clubs' %}">Campus clubs</a>
+                            <a href="{% url 'nss_units' %}">NSS</a>
                             <a href="#">EBSB</a>
                         </div>
                     </div>
@@ -76,7 +73,7 @@
                             <a href="#">University Union</a>
                             <a href="#">Anti Ragging</a>
                             <a href="#">University Orders</a>
-                            <a href="#">Student Counselling Services</a>
+                            <a href="{% url 'counselling' %}">Student Counselling Services</a>
                             <a href="#">Alumni</a>
                         </div>
                     </div>

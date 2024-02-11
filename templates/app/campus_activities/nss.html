@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="section-header" style="margin-top: 70px">
+        <h2>National Service Scheme (NSS) </h2>
+        <img src="{% static 'app/img/campus_activities/nss.jpg' %}" alt="nss-logo" style="width: 90px">
+    </div>
+    <div class="container mt-5">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Unit No</th>
+                <th>College/Department</th>
+                <th>Programme Officer</th>
+                <th>Secretary</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for unit in nss_units %}
+                <tr>
+                    <td>{{ unit.unit_no }}</td>
+                    <td>{{ unit.college_department }}</td>
+                    <td>{{ unit.programme_officer }}</td>
+                    <td>{{ unit.secretary }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

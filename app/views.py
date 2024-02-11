@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
-from .models import NewsAndEvent, Event, Testimonial, NewsItem, Director, CurrentProgramme
+from .models import NewsAndEvent, Event, Testimonial, NewsItem, Director, CurrentProgramme, CampusClubs, NssUnit, \
+    Counsellor, AnnualReport
 
 
 def index(request):
@@ -39,3 +40,23 @@ def current_program(request):
 def program_detail(request, pk):
     programme = get_object_or_404(CurrentProgramme, pk=pk)
     return render(request, 'app/programme/program_detail.html', {'programme': programme})
+
+
+def campus_clubs(request):
+    clubs = CampusClubs.objects.all()
+    return render(request, 'app/campus_activities/clubs.html', {'clubs': clubs})
+
+
+def nss_units_view(request):
+    units = NssUnit.objects.all()
+    return render(request, 'app/campus_activities/nss.html', {'nss_units': units})
+
+
+def counselling_view(request):
+    counsellors = Counsellor.objects.all()
+    return render(request, 'app/other/counselling.html', {'counsellors': counsellors})
+
+
+def annual_report_view(request):
+    reports = AnnualReport.objects.all()
+    return render(request, 'app/annual_report.html', {'reports': reports})

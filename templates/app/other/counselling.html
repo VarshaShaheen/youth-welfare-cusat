@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="section-header" style="margin-top: 70px">
+        <h2>Counselling Services</h2>
+    </div>
+    <div class="container mt-4">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Qualification</th>
+                    <th>Contact No</th>
+                    <th>Office Contact</th>
+                    <th>Consultation Time</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for counsellor in counsellors %}
+                    <tr>
+                        <td>{{ counsellor.name }}</td>
+                        <td>{{ counsellor.qualification }}</td>
+                        <td>{{ counsellor.contact_no }}</td>
+                        <td>{{ counsellor.office_contact }}</td>
+                        <td>{{ counsellor.consultation_time }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <p>Students have complex, varying needs, some of which may be less visible or difficult to meet. The
+                department works as a platform that coordinates student advocacy services on various issues. We have an
+                excellent Counselling center, which provides students counseling and consultation. Through counseling,
+                students are advised on how to manage and deal with emotional conflict and personal problems. We also
+                conduct anti-ragging awareness activities, making CUSAT a ragging-free campus.
+            </p>
+        </div>
+    </div>
+{% endblock %}

@@ -83,3 +83,41 @@ class CurrentProgramme(models.Model):
 
     def get_absolute_url(self):
         return reverse('current_programme_detail', kwargs={'pk': self.pk})
+
+
+class CampusClubs(models.Model):
+    name = models.CharField(max_length=255, null=True, blank=True)
+    coordinator = models.CharField(max_length=255, null=True, blank=True)
+    mobile = models.CharField(max_length=255, null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+
+class NssUnit(models.Model):
+    unit_no = models.CharField(max_length=50, null=True, blank=True)
+    college_department = models.CharField(max_length=200, null=True, blank=True)
+    programme_officer = models.CharField(max_length=200, null=True, blank=True)
+    secretary = models.CharField(max_length=200, null=True, blank=True)
+
+    def __str__(self):
+        return f"Unit No: {self.unit_no} - {self.college_department}"
+
+
+class Counsellor(models.Model):
+    name = models.CharField(max_length=100, null=True, blank=True)
+    qualification = models.CharField(max_length=200, null=True, blank=True)
+    contact_no = models.CharField(max_length=200, null=True, blank=True)
+    office_contact = models.CharField(max_length=200, null=True, blank=True)
+    consultation_time = models.CharField(max_length=100, null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+
+class AnnualReport(models.Model):
+    name = models.CharField(max_length=255)
+    report_pdf = models.FileField(upload_to='annual_reports/')
+
+    def __str__(self):
+        return self.name
