@@ -20,61 +20,64 @@
                         <div class="dropdown-content">
                             <a href="{% url 'department' %}">Department</a>
                             <a href="{% url 'director' %}">Director</a>
+                            <a href="{% url 'alumni_list' %}">Alumni</a>
+                            <a href="#">Contact us</a>
+                            <a href="#">Essential Info</a>
+                            <a href="#">Feedback</a>
                         </div>
                     </div>
                 </a>
-                <a>
+                <a href="{% url 'current_program' %}">Programs</a>
+                <a href="{% url 'annual_reports' %}">Reports</a>
+                <a href="{% url 'program_list' %}">Gallery</a>
+               <a>
                     <div class="dropdown">
-                        <button class="dropbtn">Programme<i style="margin-left: 3px;" class="fa fa-angle-down"></i>
+                        <button class="dropbtn">Disclosure<i style="margin-left: 3px;" class="fa fa-angle-down"></i>
                         </button>
                         <div class="dropdown-content">
-                            <a href="{% url 'current_program' %}">Current Programs</a>
+                            <a href="#">University Orders</a>
+                            <a href="#">Anti Ragging</a>
+                            <a href="{% url 'grace_marks' %}">Grace Marks</a>
                         </div>
                     </div>
                 </a>
-                <a href="{% url 'annual_reports' %}">Annual Reports</a>
-                <a>
+                 <a>
                     <div class="dropdown">
-                        <button class="dropbtn">Academics<i style="margin-left: 3px;" class="fa fa-angle-down"></i>
+                        <button class="dropbtn">Scholarships<i style="margin-left: 3px;" class="fa fa-angle-down"></i>
                         </button>
                         <div class="dropdown-content">
-                            <a href="#">Courses or training</a>
-                            <a href="#">Grace Marks</a>
                             <a href="#">Student Aid Fund</a>
                         </div>
                     </div>
                 </a>
                 <a>
                     <div class="dropdown">
-                        <button class="dropbtn">Campus Activities<i style="margin-left: 3px;"
+                        <button class="dropbtn">Academics<i style="margin-left: 3px;" class="fa fa-angle-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="#">Courses/Training</a>
+                            <a href="#">Research</a>
+                        </div>
+                    </div>
+                </a>
+                <a>
+                    <div class="dropdown">
+                        <button class="dropbtn">Campus<i style="margin-left: 3px;"
                                                                     class="fa fa-angle-down"></i></button>
                         <div class="dropdown-content">
                             <a href="{% url 'clubs' %}">Campus clubs</a>
                             <a href="{% url 'nss_units' %}">NSS</a>
-                            <a href="#">EBSB</a>
+                            <a href="#">University Union</a>
                         </div>
                     </div>
                 </a>
                 <a>
                     <div class="dropdown">
-                        <button class="dropbtn">Contacts<i style="margin-left: 3px;" class="fa fa-angle-down"></i>
-                        </button>
-                        <div class="dropdown-content">
-                            <a href="#">Contact us</a>
-                            <a href="#">Essential Contacts</a>
-                        </div>
-                    </div>
-                </a>
-                <a>
-                    <div class="dropdown">
-                        <button class="dropbtn">Other Essentials<i style="margin-left: 3px;"
+                        <button class="dropbtn">Facilities<i style="margin-left: 3px;"
                                                                    class="fa fa-angle-down"></i></button>
                         <div class="dropdown-content">
-                            <a href="#">University Union</a>
-                            <a href="#">Anti Ragging</a>
-                            <a href="#">University Orders</a>
                             <a href="{% url 'counselling' %}">Student Counselling Services</a>
-                            <a href="#">Alumni</a>
+                            <a>Health Centre</a>
                         </div>
                     </div>
                 </a>

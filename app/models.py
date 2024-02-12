@@ -121,3 +121,40 @@ class AnnualReport(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class GraceMarks(models.Model):
+    event = models.CharField(max_length=255, null=True, blank=True)
+    first = models.CharField(max_length=255, null=True, blank=True)
+    second = models.CharField(max_length=255, null=True, blank=True)
+    third = models.CharField(max_length=255, null=True, blank=True)
+    participation = models.CharField(max_length=255, null=True, blank=True)
+
+    def __str__(self):
+        return self.event
+
+
+class Program(models.Model):
+    name = models.CharField(max_length=255, null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
+    cover_image = models.ImageField(upload_to='program_covers/')
+
+    def __str__(self):
+        return self.name
+
+
+class ProgramImage(models.Model):
+    program = models.ForeignKey(Program, related_name='images', on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='program_images/')
+
+    def __str__(self):
+        return f"{self.program.name} Image"
+
+
+class Alumni(models.Model):
+    name = models.CharField(max_length=100, null=True, blank=True)
+    designation = models.CharField(max_length=100, null=True, blank=True)
+    photo = models.ImageField(upload_to='alumni_photos/')
+
+    def __str__(self):
+        return self.name

@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import NewsAndEvent, Event, Testimonial, NewsItem, Director, CurrentProgramme, CampusClubs, NssUnit, \
-    Counsellor, AnnualReport
+    Counsellor, AnnualReport, GraceMarks, Alumni
+from .models import Program, ProgramImage
 
 
 @admin.register(NewsAndEvent)
@@ -50,4 +51,27 @@ class CounsellorAdmin(admin.ModelAdmin):
 
 @admin.register(AnnualReport)
 class AnnualReportAdmin(admin.ModelAdmin):
+    list_display = ('name',)
+
+
+@admin.register(GraceMarks)
+class GraceMarkAdmin(admin.ModelAdmin):
+    list_display = ('event',)
+
+
+class ProgramImageInline(admin.TabularInline):
+    model = ProgramImage
+    extra = 1
+
+
+class ProgramAdmin(admin.ModelAdmin):
+    inlines = [ProgramImageInline, ]
+
+
+admin.site.register(Program, ProgramAdmin)
+admin.site.register(ProgramImage)
+
+
+@admin.register(Alumni)
+class AlumniAdmin(admin.ModelAdmin):
     list_display = ('name',)

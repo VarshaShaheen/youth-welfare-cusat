@@ -1,7 +1,8 @@
 # myapp/urls.py
 from django.urls import path
-from .views import index, nss_units_view, campus_clubs, counselling_view, annual_report_view
-from .views import event_detail, news_detail, about_department, about_director, current_program, program_detail
+from .views import index, nss_units_view, campus_clubs, counselling_view, annual_report_view, grace_marks_view, \
+    program_list, alumni_list, event_detail, news_detail, about_department, about_director, current_program, program_detail, \
+    program_detail_gallery
 
 urlpatterns = [
     path('', index, name='index'),
@@ -15,4 +16,9 @@ urlpatterns = [
     path('nss-units/', nss_units_view, name='nss_units'),
     path('counselling/', counselling_view, name='counselling'),
     path('annual-reports/', annual_report_view, name='annual_reports'),
+    path('grace-marks/', grace_marks_view, name='grace_marks'),
+    path('program/<int:program_id>/', program_detail_gallery, name='program_detail'),
+    path('program/', program_list, name='program_list'),
+    path('about/alumni/', alumni_list, name='alumni_list'),
+
 ]

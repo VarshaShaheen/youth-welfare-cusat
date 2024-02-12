@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ event.name }}{% endblock %}
+
+{% block content %}
+     <section id="speakers" class="wow fadeInUp">
+        <div class="container">
+            <div class="section-header">
+                <h2>Programs</h2>
+            </div>
+
+            <div class="row">
+                {% for program in programs %}
+                    <div class="col-lg-4 col-md-6">
+                        <div class="speaker">
+                            <a href="{% url 'program_detail' program.id %}">
+                                <img src="{{ program.cover_image.url }}" alt="{{ event.name }}"
+                                     class="img-fluid event-image">
+                                <div class="details">
+                                    <h3>{{ program.name }}</h3>
+                                    <p>{{ program.description }}</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

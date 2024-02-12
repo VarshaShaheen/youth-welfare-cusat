@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="section-header" style="margin-top: 75px">
+        <h2>Grace Marks</h2>
+        <p>Since 2012, University is awarding Grace Marks to winners of Inter collegiate arts and sports events, winners
+            and participants of State / South Zone/ National arts and sports events to encourage students who are
+            proficient in cultural / sports activities.</p>
+    </div>
+    <div class="container mt-4">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>First</th>
+                    <th>Second</th>
+                    <th>Third</th>
+                    <th>Participation</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for mark in grace_marks %}
+                    <tr>
+                        <td>{{ mark.event }}</td>
+                        <td>{{ mark.first }}%</td>
+                        <td>{{ mark.second }}%</td>
+                        <td>{{ mark.third }}%</td>
+                        <td>{{ mark.participation }}%</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

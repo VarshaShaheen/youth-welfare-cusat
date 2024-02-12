@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ program.name }}{% endblock %}
+
+{% block content %}
+    <main id="main" class="main-page">
+        <section id="speakers-details" class="wow fadeIn">
+            <div class="container">
+                <div class="section-header">
+                    <h2>{{ program.name }}</h2>
+                    <p>{{ program.description }}</p>
+                </div>
+
+                <section id="speakers" class="wow fadeInUp">
+                    <div class="container">
+                        <div class="row">
+                            {% for image in program.images.all %}
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="speaker">
+                                        <a href="{% url 'program_detail' program.id %}">
+                                            <img src="{{ image.image.url }}" alt="{{ program.name }}"
+                                                 class="img-fluid gallery-image">
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+    </main>
+{% endblock %}

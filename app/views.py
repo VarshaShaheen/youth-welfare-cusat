@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import NewsAndEvent, Event, Testimonial, NewsItem, Director, CurrentProgramme, CampusClubs, NssUnit, \
-    Counsellor, AnnualReport
+    Counsellor, AnnualReport, GraceMarks, Program, Alumni
 
 
 def index(request):
@@ -60,3 +60,23 @@ def counselling_view(request):
 def annual_report_view(request):
     reports = AnnualReport.objects.all()
     return render(request, 'app/annual_report.html', {'reports': reports})
+
+
+def grace_marks_view(request):
+    grace_marks = GraceMarks.objects.all()
+    return render(request, 'app/academics/grace_marks.html', {'grace_marks': grace_marks})
+
+
+def program_detail_gallery(request, program_id):
+    program = get_object_or_404(Program, pk=program_id)
+    return render(request, 'app/gallery/program_details.html', {'program': program})
+
+
+def program_list(request):
+    programs = Program.objects.all()
+    return render(request, 'app/gallery/program.html', {'programs': programs})
+
+
+def alumni_list(request):
+    alumnis = Alumni.objects.all()
+    return render(request, 'app/about/alumni.html', {'alumnis': alumnis})
