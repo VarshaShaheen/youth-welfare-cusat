@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import NewsAndEvent, Event, Testimonial, NewsItem, Director, CurrentProgramme, CampusClubs, NssUnit, \
-    Counsellor, AnnualReport, GraceMarks, Program, Alumni, EssentialInfo, UniversityOrder, AntiRagging
+    Counsellor, AnnualReport, GraceMarks, Program, Alumni, EssentialInfo, UniversityOrder, AntiRagging, StudentAidFund, \
+    Research, Union, HealthCenter
 
 
 def index(request):
@@ -44,17 +45,17 @@ def program_detail(request, pk):
 
 def campus_clubs(request):
     clubs = CampusClubs.objects.all()
-    return render(request, 'app/campus_activities/clubs.html', {'clubs': clubs})
+    return render(request, 'app/campus/clubs.html', {'clubs': clubs})
 
 
 def nss_units_view(request):
     units = NssUnit.objects.all()
-    return render(request, 'app/campus_activities/nss.html', {'nss_units': units})
+    return render(request, 'app/campus/nss.html', {'nss_units': units})
 
 
 def counselling_view(request):
     counsellors = Counsellor.objects.all()
-    return render(request, 'app/other/counselling.html', {'counsellors': counsellors})
+    return render(request, 'app/facilities/counselling.html', {'counsellors': counsellors})
 
 
 def annual_report_view(request):
@@ -104,3 +105,23 @@ def show_orders(request):
 def anti_ragging(request):
     infos = AntiRagging.objects.all()
     return render(request, 'app/disclosure/anti_ragging.html', {'infos': infos})
+
+
+def student_aid_fund(request):
+    infos = StudentAidFund.objects.all()
+    return render(request, 'app/scholarships/student-aid.html', {'infos': infos})
+
+
+def research_view(request):
+    researches = Research.objects.all()
+    return render(request, 'app/academics/research.html', {'researches': researches})
+
+
+def union_view(request):
+    members = Union.objects.all()
+    return render(request, 'app/campus/union.html', {'members': members})
+
+
+def health_center_view(request):
+    details = HealthCenter.objects.all()
+    return render(request,'app/facilities/health_centre.html', {"details": details})

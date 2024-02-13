@@ -95,13 +95,11 @@ class CampusClubs(models.Model):
 
 
 class NssUnit(models.Model):
-    unit_no = models.CharField(max_length=50, null=True, blank=True)
-    college_department = models.CharField(max_length=200, null=True, blank=True)
-    programme_officer = models.CharField(max_length=200, null=True, blank=True)
-    secretary = models.CharField(max_length=200, null=True, blank=True)
+    coordinator_name = models.CharField(max_length=255, null=True, blank=True)
+    phone_number = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
-        return f"Unit No: {self.unit_no} - {self.college_department}"
+        return 'nss added'
 
 
 class Counsellor(models.Model):
@@ -178,8 +176,44 @@ class UniversityOrder(models.Model):
 
 
 class AntiRagging(models.Model):
-    description = models.TextField(max_length=2000,null=True, blank=True)
+    description = models.TextField(max_length=2000, null=True, blank=True)
     order_pdf = models.FileField(upload_to='anti-raggings/')
 
     def __str__(self):
         return self.description
+
+
+class StudentAidFund(models.Model):
+    description = models.TextField(max_length=2000, null=True, blank=True)
+    order_pdf = models.FileField(upload_to='student-aid/')
+
+    def __str__(self):
+        return self.description
+
+
+class Research(models.Model):
+    name = models.CharField(max_length=255)
+    research_area = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+
+class Union(models.Model):
+    designation = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
+    address = models.CharField(max_length=1500, null=True, blank=True)
+    contact_number = models.CharField(max_length=100, null=True, blank=True)
+
+    def __str__(self):
+        return self.designation
+
+
+class HealthCenter(models.Model):
+    doctor = models.CharField(max_length=255)
+    nurse = models.CharField(max_length=255, null=True, blank=True)
+    contact_number = models.CharField(max_length=100, null=True, blank=True)
+    working_time = models.CharField(max_length=255, null=True, blank=True)
+
+    def __str__(self):
+        return self.doctor

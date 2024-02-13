@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="section-header" style="margin-top: 75px">
+        <h2>Research</h2>
+    </div>
+    <div class="container">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Research Area</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for research in researches %}
+                <tr>
+                    <td>{{ research.name }}</td>
+                    <td>{{ research.research_area }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

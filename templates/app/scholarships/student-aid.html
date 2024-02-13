@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="section-header" style="margin-top: 90px">
+        <h2>Student Aid Fund</h2>
+    </div>
+    {% for info in infos %}
+    <div class="container">
+        <p>{{ info.description }}</p>
+        <a href="{{ info.order_pdf.url }}" target="_blank">
+             <button class="about-btn"> View more
+    </button>
+        </a>
+    </div>
+    {% endfor %}
+{% endblock %}

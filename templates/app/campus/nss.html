@@ -9,19 +9,15 @@
         <table class="table">
             <thead>
             <tr>
-                <th>Unit No</th>
-                <th>College/Department</th>
-                <th>Programme Officer</th>
-                <th>Secretary</th>
+                <th>Program Coordinator Name</th>
+                <th>Contact</th>
             </tr>
             </thead>
             <tbody>
             {% for unit in nss_units %}
                 <tr>
-                    <td>{{ unit.unit_no }}</td>
-                    <td>{{ unit.college_department }}</td>
-                    <td>{{ unit.programme_officer }}</td>
-                    <td>{{ unit.secretary }}</td>
+                    <td>{{ unit.coordinator_name }}</td>
+                    <td>{{ unit.phone_number }}</td>
                 </tr>
             {% endfor %}
             </tbody>

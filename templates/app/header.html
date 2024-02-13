@@ -46,7 +46,7 @@
                         <button class="dropbtn">Scholarships<i style="margin-left: 3px;" class="fa fa-angle-down"></i>
                         </button>
                         <div class="dropdown-content">
-                            <a href="#">Student Aid Fund</a>
+                            <a href="{% url 'student_aid_fund' %}">Student Aid Fund</a>
                         </div>
                     </div>
                 </a>
@@ -56,7 +56,7 @@
                         </button>
                         <div class="dropdown-content">
                             <a href="#">Courses/Training</a>
-                            <a href="#">Research</a>
+                            <a href="{% url 'research_view' %}">Research</a>
                         </div>
                     </div>
                 </a>
@@ -67,17 +67,16 @@
                         <div class="dropdown-content">
                             <a href="{% url 'clubs' %}">Campus clubs</a>
                             <a href="{% url 'nss_units' %}">NSS</a>
-                            <a href="#">University Union</a>
+                            <a href="{% url 'union_view' %}">University Union</a>
                         </div>
                     </div>
                 </a>
                 <a>
                     <div class="dropdown">
-                        <button class="dropbtn">Facilities<i style="margin-left: 3px;"
-                                                                   class="fa fa-angle-down"></i></button>
+                        <button class="dropbtn">Facilities<i style="margin-left: 3px;" class="fa fa-angle-down"></i></button>
                         <div class="dropdown-content">
                             <a href="{% url 'counselling' %}">Student Counselling Services</a>
-                            <a>Health Centre</a>
+                            <a href="{% url 'health_center_view' %}">Health Centre</a>
                         </div>
                     </div>
                 </a>
