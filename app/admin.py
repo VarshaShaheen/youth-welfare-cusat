@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import NewsAndEvent, Event, Testimonial, NewsItem, Director, CurrentProgramme, CampusClubs, NssUnit, \
-    Counsellor, AnnualReport, GraceMarks, Alumni, EssentialInfo, UniversityOrder, Program, ProgramImage
+    Counsellor, AnnualReport, GraceMarks, Alumni, EssentialInfo, UniversityOrder, Program, ProgramImage, AntiRagging
 
 
 @admin.register(NewsAndEvent)
@@ -79,3 +79,5 @@ class AlumniAdmin(admin.ModelAdmin):
 admin.site.register(EssentialInfo)
 
 admin.site.register(UniversityOrder)
+
+admin.site.register(AntiRagging)

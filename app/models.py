@@ -175,3 +175,11 @@ class UniversityOrder(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class AntiRagging(models.Model):
+    description = models.TextField(max_length=2000,null=True, blank=True)
+    order_pdf = models.FileField(upload_to='anti-raggings/')
+
+    def __str__(self):
+        return self.description

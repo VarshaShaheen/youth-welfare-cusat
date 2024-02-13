@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import NewsAndEvent, Event, Testimonial, NewsItem, Director, CurrentProgramme, CampusClubs, NssUnit, \
-    Counsellor, AnnualReport, GraceMarks, Program, Alumni, EssentialInfo, UniversityOrder
+    Counsellor, AnnualReport, GraceMarks, Program, Alumni, EssentialInfo, UniversityOrder, AntiRagging
 
 
 def index(request):
@@ -99,3 +99,8 @@ def feedback(request):
 def show_orders(request):
     orders = UniversityOrder.objects.all()
     return render(request, 'app/disclosure/orders.html', {'orders': orders})
+
+
+def anti_ragging(request):
+    infos = AntiRagging.objects.all()
+    return render(request, 'app/disclosure/anti_ragging.html', {'infos': infos})

@@ -2,7 +2,7 @@
 from django.urls import path
 from .views import index, nss_units_view, campus_clubs, counselling_view, annual_report_view, grace_marks_view, \
     program_list, alumni_list, event_detail, news_detail, about_department, about_director, current_program, \
-    program_detail, program_detail_gallery, contact_us, essential_info, feedback, show_orders
+    program_detail, program_detail_gallery, contact_us, essential_info, feedback, show_orders, anti_ragging
 
 
 urlpatterns = [
@@ -25,5 +25,6 @@ urlpatterns = [
     path('about/essential-info', essential_info, name='essential_info'),
     path('about/feedback', feedback, name='feedback'),
     path('disclosure/orders', show_orders, name='show_orders'),
+    path('disclosure/anti-ragging', anti_ragging, name='anti_ragging'),
 
 ]
