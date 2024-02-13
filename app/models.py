@@ -158,3 +158,20 @@ class Alumni(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class EssentialInfo(models.Model):
+    authority = models.CharField(max_length=100, null=True, blank=True)
+    phone = models.CharField(max_length=30, null=True, blank=True)
+    mobile = models.CharField(max_length=30, null=True, blank=True)
+
+    def __str__(self):
+        return self.authority
+
+
+class UniversityOrder(models.Model):
+    name = models.CharField(max_length=255)
+    order_pdf = models.FileField(upload_to='orders/')
+
+    def __str__(self):
+        return self.name

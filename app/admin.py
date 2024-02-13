@@ -1,7 +1,6 @@
 from django.contrib import admin
 from .models import NewsAndEvent, Event, Testimonial, NewsItem, Director, CurrentProgramme, CampusClubs, NssUnit, \
-    Counsellor, AnnualReport, GraceMarks, Alumni
-from .models import Program, ProgramImage
+    Counsellor, AnnualReport, GraceMarks, Alumni, EssentialInfo, UniversityOrder, Program, ProgramImage
 
 
 @admin.register(NewsAndEvent)
@@ -75,3 +74,8 @@ admin.site.register(ProgramImage)
 @admin.register(Alumni)
 class AlumniAdmin(admin.ModelAdmin):
     list_display = ('name',)
+
+
+admin.site.register(EssentialInfo)
+
+admin.site.register(UniversityOrder)

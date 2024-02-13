@@ -38,16 +38,37 @@
 
                     </div>
 
-                    <div class="row mt-5">
-                        <div class="col-md-12">
-                            <h3 class="heading-dept">Contact Details</h3>
-                            <div class="details mt-3">
-                                <p><i class="fa fa-phone"></i> <strong>Phone: </strong> {{ director.phone }}</p>
-                                <p><i class="fa fa-envelope"></i> <strong>Email: </strong> {{ director.email }}</p>
-                                <p><i class="fa fa-location-arrow"></i> <strong>Address:</strong> {{ director.address|safe }}</p>
+                    <section id="contact" class="section-bg wow fadeInUp">
+
+            <div class="container">
+                    <div class="row contact-info">
+                        <div class="col-md-4">
+                            <div class="contact-address">
+                                <i class="ion-ios-location-outline"></i>
+                                <h3>Address</h3>
+                                <address>{{ director.address| safe }}</address>
                             </div>
                         </div>
+
+                        <div class="col-md-4">
+                            <div class="contact-phone">
+                                <i class="ion-ios-telephone-outline"></i>
+                                <h3>Phone Number</h3>
+                                <p>{{ director.phone }}</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="contact-email">
+                                <i class="ion-ios-email-outline"></i>
+                                <h3>Email</h3>
+                                <p><a href="mailto:{{ director.email }}">{{ director.email }}</a></p>
+                            </div>
+                        </div>
+
                     </div>
+            </div>
+        </section><!-- #contact -->
 
                 {% endfor %}
             </div>

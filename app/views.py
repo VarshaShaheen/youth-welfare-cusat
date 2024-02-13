@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import NewsAndEvent, Event, Testimonial, NewsItem, Director, CurrentProgramme, CampusClubs, NssUnit, \
-    Counsellor, AnnualReport, GraceMarks, Program, Alumni
+    Counsellor, AnnualReport, GraceMarks, Program, Alumni, EssentialInfo, UniversityOrder
 
 
 def index(request):
@@ -80,3 +80,22 @@ def program_list(request):
 def alumni_list(request):
     alumnis = Alumni.objects.all()
     return render(request, 'app/about/alumni.html', {'alumnis': alumnis})
+
+
+def contact_us(request):
+    directors = Director.objects.all()
+    return render(request, 'app/about/contact-us.html', {'directors': directors})
+
+
+def essential_info(request):
+    info = EssentialInfo.objects.all()
+    return render(request, 'app/about/essential_info.html', {'info': info})
+
+
+def feedback(request):
+    return render(request, 'app/about/feedback.html')
+
+
+def show_orders(request):
+    orders = UniversityOrder.objects.all()
+    return render(request, 'app/disclosure/orders.html', {'orders': orders})

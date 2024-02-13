@@ -1345,7 +1345,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin-bottom: 20px;
 }
 
-#contact .form #sendmessage {
+.form #sendmessage {
   color: #00d084;
   border: 1px solid #00d084;
   display: none;
@@ -1355,7 +1355,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin-bottom: 15px;
 }
 
-#contact .form #errormessage {
+.form #errormessage {
   color: red;
   display: none;
   border: 1px solid red;
@@ -1364,14 +1364,13 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-weight: 600;
   margin-bottom: 15px;
 }
-
-#contact .form #sendmessage.show,
-#contact .form #errormessage.show,
-#contact .form .show {
+.form #sendmessage.show,
+.form #errormessage.show,
+.form .show {
   display: block;
 }
 
-#contact .form .validation {
+.form .validation {
   color: red;
   display: none;
   margin: 0 0 20px;
@@ -1379,15 +1378,15 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-size: 13px;
 }
 
-#contact .form input,
-#contact .form textarea {
+.form input,
+.form textarea {
   padding: 10px 14px;
   border-radius: 0;
   box-shadow: none;
   font-size: 15px;
 }
 
-#contact .form button[type="submit"] {
+.form button[type="submit"] {
   background: #00d084;
   border: 0;
   padding: 10px 40px;
@@ -1397,8 +1396,8 @@ body.mobile-nav-active #mobile-nav-toggle {
   cursor: pointer;
 }
 
-#contact .form button[type="submit"]:hover {
-  background: #e0072f;
+.form button[type="submit"]:hover {
+  background: #275e49;
 }
 
 /*--------------------------------------------------------------

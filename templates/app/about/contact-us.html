@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+
+{% block content %}
+    <main id="main" class="main-page">
+        <!--==========================
+              Contact Section
+            ============================-->
+        <section id="contact" class="section-bg wow fadeInUp">
+
+            <div class="container">
+
+                <div class="section-header">
+                    <h2>Contact Us</h2>
+                </div>
+                {% for director in directors %}
+                    <div class="row contact-info">
+                        <div class="col-md-4">
+                            <div class="contact-address">
+                                <i class="ion-ios-location-outline"></i>
+                                <h3>Address</h3>
+                                <address>{{ director.address| safe }}</address>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="contact-phone">
+                                <i class="ion-ios-telephone-outline"></i>
+                                <h3>Phone Number</h3>
+                                <p>{{ director.phone }}</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="contact-email">
+                                <i class="ion-ios-email-outline"></i>
+                                <h3>Email</h3>
+                                <p><a href="mailto:{{ director.email }}">{{ director.email }}</a></p>
+                            </div>
+                        </div>
+
+                    </div>
+                {% endfor %}
+            </div>
+        </section><!-- #contact -->
+    <!--==========================
+      Venue Section
+    ============================-->
+        <section id="venue" class="wow fadeInUp">
+            <div class="container-fluid">
+
+                <div class="row no-gutters">
+                    <div class="col-lg-6 venue-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.6862575981586!2d76.32621917450896!3d10.04272757229913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080c37883a87ad%3A0x58b12474afa1648f!2sDepartment%20Of%20Youth%20Welfare!5e0!3m2!1sen!2sin!4v1707506361317!5m2!1sen!2sin"
+                                frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+
+                    <div class="col-lg-6 venue-info">
+                        <div class="row justify-content-center">
+                            <div class="col-11 col-lg-8">
+                                <h3>Department Of Youth Welfare, CUSAT</h3>
+                                <p>28VH+3GM,<br>
+                                    Second Floor,<br>
+                                    Amenity Centre,<br>
+                                    University Road, CUSAT,<br>
+                                    South Kalamassery, Kalamassery,<br>
+                                    Kochi, Kerala 682022</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    <!--==========================
+      Venue Section Ends
+    ============================-->
+    </main>
+{% endblock %}

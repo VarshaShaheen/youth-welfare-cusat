@@ -20,9 +20,9 @@
                             <a href="{% url 'department' %}">Department</a>
                             <a href="{% url 'director' %}">Director</a>
                             <a href="{% url 'alumni_list' %}">Alumni</a>
-                            <a href="#">Contact us</a>
-                            <a href="#">Essential Info</a>
-                            <a href="#">Feedback</a>
+                            <a href="{% url 'contact_us' %}">Contact us</a>
+                            <a href="{% url 'essential_info' %}">Essential Info</a>
+                             <a href="{% url 'feedback' %}">Feedback</a>
                         </div>
                     </div>
                 </a>
@@ -34,7 +34,7 @@
                         <button class="dropbtn">Disclosure<i style="margin-left: 3px;" class="fa fa-angle-down"></i>
                         </button>
                         <div class="dropdown-content">
-                            <a href="#">University Orders</a>
+                            <a href="{% url 'show_orders' %}">University Orders</a>
                             <a href="#">Anti Ragging</a>
                             <a href="{% url 'grace_marks' %}">Grace Marks</a>
                         </div>
