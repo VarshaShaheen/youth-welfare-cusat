@@ -118,6 +118,7 @@ h6 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 90px !important;
 }
 
 .section-header::before {

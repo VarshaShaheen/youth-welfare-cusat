@@ -1,29 +1,52 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <div class="section-header" style="margin-top: 70px">
+    <div class="section-header">
         <h2>Health Center</h2>
     </div>
-    <div class="container mt-5">
-        <table class="table">
-            <thead>
-            <tr>
-                <th>Doctor</th>
-                <th>Nurse</th>
-                <th>Contact</th>
-                <th>Working Time</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for detail in details %}
+    <div class="container mt-4">
+        <h3>Doctors</h3>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
                 <tr>
-                    <td>{{ detail.doctor }}</td>
-                    <td>{{ detail.nurse }}</td>
-                    <td>{{ detail.contact_number }}</td>
-                    <td>{{ detail.working_time }}</td>
+                    <th>Name</th>
+                    <th>Contact</th>
+                    <th>Working Time</th>
                 </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                {% for doctor in doctors %}
+                    <tr>
+                        <td>{{ doctor.name }}</td>
+                        <td>{{ doctor.contact }}</td>
+                        <td>{{ doctor.working_time }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Nurses</h3>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Contact</th>
+                    <th>Working Time</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for nurse in nurses %}
+                    <tr>
+                        <td>{{ nurse.name }}</td>
+                        <td>{{ nurse.contact }}</td>
+                        <td>{{ nurse.working_time }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
 {% endblock %}

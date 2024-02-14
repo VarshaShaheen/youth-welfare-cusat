@@ -211,11 +211,18 @@ class Union(models.Model):
         return self.designation
 
 
-class HealthCenter(models.Model):
-    doctor = models.CharField(max_length=255)
-    nurse = models.CharField(max_length=255, null=True, blank=True)
-    contact_number = models.CharField(max_length=100, null=True, blank=True)
-    working_time = models.CharField(max_length=255, null=True, blank=True)
+class HealthCentre(models.Model):
+    name = models.CharField(max_length=100)
+    contact = models.CharField(max_length=100)
+    working_time = models.CharField(max_length=100)
 
-    def __str__(self):
-        return self.doctor
+    class Meta:
+        abstract = True
+
+
+class Doctor(HealthCentre):
+    pass
+
+
+class Nurse(HealthCentre):
+    pass
