@@ -5,12 +5,16 @@
         <h2>Student Aid Fund</h2>
     </div>
     {% for info in infos %}
-    <div class="container">
-        <p>{{ info.description }}</p>
-        <a href="{{ info.order_pdf.url }}" target="_blank">
-             <button class="about-btn"> View more
-    </button>
-        </a>
-    </div>
+        <div class="container">
+            <p>{{ info.description }}</p>
+            <a href="{{ info.order_pdf.url }}" target="_blank">
+                <button class="about-btn"> View more
+                </button>
+            </a>
+            <a href="{{ info.awardees.url }}">
+                <button class="about-btn"> Awardees
+                </button>
+            </a>
+        </div>
     {% endfor %}
 {% endblock %}

@@ -188,6 +188,7 @@ class AntiRagging(models.Model):
 class StudentAidFund(models.Model):
     description = models.TextField(max_length=2000, null=True, blank=True)
     order_pdf = models.FileField(upload_to='student-aid/')
+    awardees = models.FileField(upload_to='student-aid/',null=True, blank=True)
 
     def __str__(self):
         return self.description
