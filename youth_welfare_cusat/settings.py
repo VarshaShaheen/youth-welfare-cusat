@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-t7)=b8_3_4781nmjuvu&fa6i(-p@m=%$1$t%7+&@63!n9#6h6@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [ 'welfare.cusat.ac.in' ]
 
 # Application definition
 
