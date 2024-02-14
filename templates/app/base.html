@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Department of Youth Welfare Cusat{% endblock %}</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- Additional meta tags -->
+
+    <!-- Favicons -->
+    <link href="{% static 'app/img/logo/logo.png' %}" rel="icon">
+    <link href="{% static 'app/img/logo/logo.png' %}" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800"
+          rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link rel="stylesheet" href="{% static 'app/lib/bootstrap/css/bootstrap.min.css' %}">
+
+    <!-- Libraries CSS Files -->
+    <link href="{% static 'app/lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'app/lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'app/lib/venobox/venobox.css' %}" rel="stylesheet">
+    <link href="{% static 'app/lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="{% static 'app/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'app/css/testimonial.css' %}" rel="stylesheet">
+</head>
+<body>
+ {% include "app/header2.html" %}
+    {% block content %}
+    {% endblock %}
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <script src="{% static 'app/lib/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'app/lib/jquery/jquery-migrate.min.js' %}"></script>
+    <script src="{% static 'app/lib/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'app/lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'app/lib/superfish/hoverIntent.js' %}"></script>
+    <script src="{% static 'app/lib/superfish/superfish.min.js' %}"></script>
+    <script src="{% static 'app/lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'app/lib/venobox/venobox.min.js' %}"></script>
+    <script src="{% static 'app/lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+    <!-- Template Main Javascript File -->
+    <script src="{% static 'app/js/main.js' %}"></script>
+{% include "app/footer.html" %}
+</body>
+</html>
