@@ -61,7 +61,7 @@ class Director(models.Model):
     address = CKEditor5Field(config_name='extends', null=True, blank=True)
     email = models.EmailField(max_length=200, null=True, blank=True)
     facebook = models.URLField(max_length=200, null=True, blank=True)
-    twitter = models.URLField(max_length=200, null=True, blank=True)
+    instagram = models.URLField(max_length=200, null=True, blank=True)
     linkedin = models.URLField(max_length=200, null=True, blank=True)
     google = models.URLField(max_length=200, null=True, blank=True)
 
@@ -127,6 +127,8 @@ class GraceMarks(models.Model):
     second = models.CharField(max_length=255, null=True, blank=True)
     third = models.CharField(max_length=255, null=True, blank=True)
     participation = models.CharField(max_length=255, null=True, blank=True)
+    grace_mark_form = models.FileField(upload_to='grace_marks/', null=True)
+    uo_grace_mark_form = models.FileField(upload_to='grace_marks/', null=True)
 
     def __str__(self):
         return self.event

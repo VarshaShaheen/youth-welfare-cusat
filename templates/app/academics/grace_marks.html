@@ -31,6 +31,18 @@
                 {% endfor %}
                 </tbody>
             </table>
+            {% for mark in grace_marks %}
+                {% if mark.grace_mark_form %}
+                    <h4>Application for grace marks</h4>
+                    <a href="{{ mark.grace_mark_form.url }}">
+                        <button class="about-btn">Download PDF</button>
+                    </a>
+                    <h4>U.O Gracemarks</h4>
+                    <a href="{{ mark.uo_grace_mark_form.url }}">
+                        <button class="about-btn">Download PDF</button>
+                    </a>
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
 {% endblock %}
