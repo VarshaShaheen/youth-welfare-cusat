@@ -189,7 +189,7 @@ class AntiRagging(models.Model):
 class StudentAidFund(models.Model):
     description = models.TextField(max_length=2000, null=True, blank=True)
     order_pdf = models.FileField(upload_to='student-aid/')
-    awardees = models.FileField(upload_to='student-aid/',null=True, blank=True)
+    awardees = models.FileField(upload_to='student-aid/', null=True, blank=True)
 
     def __str__(self):
         return self.description
@@ -215,16 +215,17 @@ class Union(models.Model):
 
 class HealthCentre(models.Model):
     name = models.CharField(max_length=100)
-    contact = models.CharField(max_length=100)
-    working_time = models.CharField(max_length=100)
+    designation = models.CharField(max_length=250, null=True, blank=True)
+    contact = models.CharField(max_length=100, null=True, blank=True)
 
-    class Meta:
-        abstract = True
-
-
-class Doctor(HealthCentre):
-    pass
+    def __str__(self):
+        return self.name
 
 
-class Nurse(HealthCentre):
-    pass
+class Administration(models.Model):
+    name = models.CharField(max_length=255, null=True, blank=True)
+    designation = models.CharField(max_length=255, null=True, blank=True)
+    contact = models.CharField(max_length=255, null=True, blank=True)
+
+    def __str__(self):
+        return self.name

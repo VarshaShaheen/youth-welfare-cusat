@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import NewsAndEvent, Event, Testimonial, NewsItem, Director, CurrentProgramme, CampusClubs, NssUnit, \
     Counsellor, AnnualReport, GraceMarks, Program, Alumni, EssentialInfo, UniversityOrder, AntiRagging, StudentAidFund, \
-    Research, Union, Doctor, Nurse
+    Research, Union, HealthCentre, Administration
 
 
 def index(request):
@@ -78,11 +78,6 @@ def program_list(request):
     return render(request, 'app/gallery/program.html', {'programs': programs})
 
 
-def alumni_list(request):
-    alumnis = Alumni.objects.all()
-    return render(request, 'app/about/alumni.html', {'alumnis': alumnis})
-
-
 def contact_us(request):
     directors = Director.objects.all()
     return render(request, 'app/about/contact-us.html', {'directors': directors})
@@ -123,6 +118,10 @@ def union_view(request):
 
 
 def health_centre_view(request):
-    doctors = Doctor.objects.all()
-    nurses = Nurse.objects.all()
-    return render(request, 'app/facilities/health_centre.html', {'doctors': doctors, 'nurses': nurses})
+    infos = HealthCentre.objects.all()
+    return render(request, 'app/facilities/health_centre.html', {'infos': infos})
+
+
+def administration_view(request):
+    infos = Administration.objects.all()
+    return render(request, 'app/about/administration.html', {"infos": infos})

@@ -1412,7 +1412,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #fff;
 }
 
-#footer .footer-top .footer-info img {
+.footer-logo {
   height: 50px;
   margin-bottom: 20px;
   width: 60px;
@@ -1490,10 +1490,15 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #footer .footer-top .footer-contact {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   margin-bottom: 30px;
 }
 
 #footer .footer-top .footer-contact p {
+  text-align: center;
   line-height: 26px;
 }
 
