@@ -14,15 +14,15 @@ class NewsAndEvent(models.Model):
 
 
 class Event(models.Model):
-    name = models.CharField(max_length=200, null=True, blank=True)  # Allows null and blank values
+    name = models.CharField(max_length=200, null=True, blank=True)
     cover_image = models.ImageField(upload_to='events/covers/', null=True,
-                                    blank=True)  # Null for DB, blank for forms
+                                    blank=True)
     description = CKEditor5Field(config_name='extends', null=True, blank=True)
-    date = models.CharField(max_length=100, null=True, blank=True)  # Allows null and blank values
+    date = models.CharField(max_length=100, null=True, blank=True)
     time = models.CharField(max_length=100, null=True, blank=True)
-    location = models.CharField(max_length=100, null=True, blank=True)  # Allows null and blank values
+    location = models.CharField(max_length=100, null=True, blank=True)
     contact = models.CharField(max_length=100, null=True, blank=True)
-    registration_link = models.URLField(max_length=200, null=True, blank=True)  # Allows null and blank values
+    registration_link = models.URLField(max_length=200, null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -73,7 +73,7 @@ class CurrentProgramme(models.Model):
     name = models.CharField(max_length=255)
     date = models.CharField(max_length=255, null=True, blank=True)
     time = models.CharField(max_length=255, null=True, blank=True)
-    report = models.FileField(upload_to='programme_reports/', null=True, blank=True)  # Assuming PDFs can be optional
+    report = models.FileField(upload_to='programme_reports/', null=True, blank=True)
     registration_link = models.URLField(max_length=200, null=True, blank=True)
     organisers = models.CharField(max_length=255, null=True, blank=True)
     description = CKEditor5Field(config_name='extends', null=True, blank=True)
