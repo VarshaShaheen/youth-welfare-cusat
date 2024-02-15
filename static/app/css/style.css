@@ -480,7 +480,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 #intro {
   width: 100%;
   height: 100vh;
-  background: url(../img/carousal.png) top center;
+  background: url(../img/carousal.webp) top center;
   background-size: cover;
   overflow: hidden;
   position: relative;
@@ -1693,7 +1693,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   }
   #intro{
     height: 428px !important;
-    background: url(../img/car2.png) top center;
+    background: url(../img/car2.webp) top center;
     background-size: cover;
 
   }
