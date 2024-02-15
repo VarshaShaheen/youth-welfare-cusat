@@ -215,8 +215,10 @@ class Union(models.Model):
 
 class HealthCentre(models.Model):
     name = models.CharField(max_length=100)
+    qualification = models.CharField(max_length=250, null=True, blank=True)
     designation = models.CharField(max_length=250, null=True, blank=True)
     contact = models.CharField(max_length=100, null=True, blank=True)
+    office_contact = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -229,3 +231,9 @@ class Administration(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Courses(models.Model):
+    course = models.CharField(max_length=255, null=True, blank=True)
+    details
+
