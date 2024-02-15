@@ -116,6 +116,7 @@ class Counsellor(models.Model):
 class AnnualReport(models.Model):
     name = models.CharField(max_length=255)
     report_pdf = models.FileField(upload_to='annual_reports/')
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name

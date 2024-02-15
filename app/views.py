@@ -59,7 +59,7 @@ def counselling_view(request):
 
 
 def annual_report_view(request):
-    reports = AnnualReport.objects.all()
+    reports = AnnualReport.objects.all().order_by('-created_at')
     return render(request, 'app/annual_report.html', {'reports': reports})
 
 
