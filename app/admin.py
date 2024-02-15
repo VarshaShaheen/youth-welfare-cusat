@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import NewsAndEvent, Event, Testimonial, NewsItem, Director, CurrentProgramme, CampusClubs, NssUnit, \
     Counsellor, AnnualReport, GraceMarks, Alumni, EssentialInfo, UniversityOrder, Program, ProgramImage, AntiRagging, \
-    StudentAidFund, Research, Union, HealthCentre, Administration
+    StudentAidFund, Research, Union, HealthCentre, Administration, Courses
 
 
 @admin.register(NewsAndEvent)
@@ -101,3 +101,8 @@ class HealthCentreAdmin(admin.ModelAdmin):
 @admin.register(Administration)
 class StaffAdmin(admin.ModelAdmin):
     list_display = ('name',)
+
+
+@admin.register(Courses)
+class CoursesAdmin(admin.ModelAdmin):
+    list_display = ('course',)

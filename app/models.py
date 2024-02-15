@@ -235,5 +235,8 @@ class Administration(models.Model):
 
 class Courses(models.Model):
     course = models.CharField(max_length=255, null=True, blank=True)
-    details
+    details = models.FileField(upload_to='courses/')
+
+    def __str__(self):
+        return self.course
 

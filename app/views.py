@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import NewsAndEvent, Event, Testimonial, NewsItem, Director, CurrentProgramme, CampusClubs, NssUnit, \
-    Counsellor, AnnualReport, GraceMarks, Program, Alumni, EssentialInfo, UniversityOrder, AntiRagging, StudentAidFund, \
-    Research, Union, HealthCentre, Administration
+    Counsellor, AnnualReport, GraceMarks, Program, EssentialInfo, UniversityOrder, AntiRagging, StudentAidFund, \
+    Research, Union, HealthCentre, Administration, Courses
 
 
 def index(request):
@@ -125,3 +125,8 @@ def health_centre_view(request):
 def administration_view(request):
     infos = Administration.objects.all()
     return render(request, 'app/about/administration.html', {"infos": infos})
+
+
+def courses_view(request):
+    courses = Courses.objects.all()
+    return render(request,'app/academics/courses.html', {'courses':courses})
