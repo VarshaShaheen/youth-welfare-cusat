@@ -4,87 +4,64 @@
 {% load static %}
 <header id="header" class="header-bg-color">
     <div class="container">
+        <button type="button" id="mobile-nav-toggle"><i class="fa fa-bars"></i></button>
 
         <div id="logo" class="pull-left">
-            <a href="#intro" class="scrollto"><img src="{% static 'app/img/logo/cusat.png' %}" alt="" title=""></a>
-            <a href="#intro" class="scrollto header-logo"><img src="{% static 'app/img/logo/logo.png' %}" alt="" title=""></a>
+            <a href="https://www.cusat.ac.in/" class="scrollto"><img src="{% static 'app/img/logo/cusat.png' %}" alt=""
+                                                                     title=""></a>
+            <a href="{% url 'index' %}" class="scrollto header-logo"><img src="{% static 'app/img/logo/logo.png' %}"
+                                                                          alt="" title=""></a>
         </div>
 
-        <nav id="nav-menu-container" class="topnav">
-            <div class="nav-menu">
-                <a href="{% url 'index' %}">Home</a>
-                <a>
-                    <div class="dropdown">
-                        <button class="dropbtn">About<i style="margin-left: 3px;" class="fa fa-angle-down"></i></button>
-                        <div class="dropdown-content">
-                            <a href="{% url 'department' %}">Department</a>
-                            <a href="{% url 'director' %}">Director</a>
-                            <a href="{% url 'alumni_list' %}">Alumni</a>
-                            <a href="{% url 'contact_us' %}">Contact us</a>
-                            <a href="{% url 'essential_info' %}">Essential Info</a>
-                             <a href="{% url 'feedback' %}">Feedback</a>
-                        </div>
-                    </div>
-                </a>
-                <a href="{% url 'current_program' %}">Programs</a>
-                <a href="{% url 'annual_reports' %}">Reports</a>
-                <a href="{% url 'program_list' %}">Gallery</a>
-               <a>
-                    <div class="dropdown">
-                        <button class="dropbtn">Disclosure<i style="margin-left: 3px;" class="fa fa-angle-down"></i>
-                        </button>
-                        <div class="dropdown-content">
-                            <a href="{% url 'show_orders' %}">University Orders</a>
-                            <a href="{% url 'anti_ragging' %}">Anti Ragging</a>
-                            <a href="{% url 'grace_marks' %}">Grace Marks</a>
-                        </div>
-                    </div>
-                </a>
-                 <a>
-                    <div class="dropdown">
-                        <button class="dropbtn">Scholarships<i style="margin-left: 3px;" class="fa fa-angle-down"></i>
-                        </button>
-                        <div class="dropdown-content">
-                            <a href="{% url 'student_aid_fund' %}">Student Aid Fund</a>
-                        </div>
-                    </div>
-                </a>
-                <a>
-                    <div class="dropdown">
-                        <button class="dropbtn">Academics<i style="margin-left: 3px;" class="fa fa-angle-down"></i>
-                        </button>
-                        <div class="dropdown-content">
-                            <a href="#">Courses/Training</a>
-                             <a href="{% url 'research_view' %}">Research</a>
-                        </div>
-                    </div>
-                </a>
-                <a>
-                    <div class="dropdown">
-                        <button class="dropbtn">Campus<i style="margin-left: 3px;"
-                                                                    class="fa fa-angle-down"></i></button>
-                        <div class="dropdown-content">
-                            <a href="{% url 'clubs' %}">Campus clubs</a>
-                            <a href="{% url 'nss_units' %}">NSS</a>
-                            <a href="{% url 'union_view' %}">University Union</a>
-                             <a href="#">Cusat Radio</a>
-                        </div>
-                    </div>
-                </a>
-                <a>
-                    <div class="dropdown">
-                        <button class="dropbtn">Facilities<i style="margin-left: 3px;"
-                                                                   class="fa fa-angle-down"></i></button>
-                        <div class="dropdown-content">
-                            <a href="{% url 'counselling' %}">Student Counselling Services</a>
-                            <a href="{% url 'health_centre_view' %}">Health Centre</a>
-                        </div>
-                    </div>
-                </a>
-                <a href="javascript:void(0);" class="icon" type="button" onclick="myFunction()">
-                    <i class="fa fa-bars"></i>
-                </a>
-            </div>
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li class="menu-has-children"><a href="">About</a>
+                    <ul>
+                        <li><a href="{% url 'department' %}">Department</a></li>
+                        <li><a href="{% url 'director' %}">Director</a></li>
+                        <li><a href="{% url 'alumni_list' %}">Alumni</a></li>
+                        <li><a href="{% url 'contact_us' %}">Contact us</a></li>
+                        <li><a href="{% url 'essential_info' %}">Essential Info</a></li>
+                        <li><a href="{% url 'feedback' %}">Feedback</a></li>
+                    </ul>
+                </li>
+                <li><a href="{% url 'current_program' %}">Programs</a></li>
+                <li><a href="{% url 'annual_reports' %}">Reports</a></li>
+                <li><a href="{% url 'program_list' %}">Gallery</a></li>
+                <li class="menu-has-children"><a href="">Disclosure</a>
+                    <ul>
+                        <li><a href="{% url 'show_orders' %}">University Orders</a></li>
+                        <li><a href="{% url 'anti_ragging' %}">Anti Ragging</a></li>
+                        <li><a href="{% url 'grace_marks' %}">Grace Marks</a></li>
+                    </ul>
+                </li>
+                <li class="menu-has-children"><a href="">Scholarships</a>
+                    <ul>
+                        <li><a href="{% url 'student_aid_fund' %}">Student Aid Fund</a></li>
+                    </ul>
+                </li>
+                <li class="menu-has-children"><a href="">Academics</a>
+                    <ul>
+                        <li><a href="#">Courses/Training</a></li>
+                        <li><a href="{% url 'research_view' %}">Research</a></li>
+                    </ul>
+                </li>
+                <li class="menu-has-children"><a href="">Campus</a>
+                    <ul>
+                        <li><a href="{% url 'clubs' %}">Campus clubs</a></li>
+                        <li><a href="{% url 'nss_units' %}">NSS</a></li>
+                        <li><a href="{% url 'union_view' %}">University Union</a></li>
+                        <li><a href="#">Cusat Radio</a></li>
+                    </ul>
+                </li>
+                <li class="menu-has-children"><a href="">Facilities</a>
+                    <ul>
+                        <li><a href="{% url 'counselling' %}">Student Counselling Services</a></li>
+                        <li><a href="{% url 'health_centre_view' %}">Health Centre</a></li>
+                    </ul>
+                </li>
+            </ul>
         </nav><!-- #nav-menu-container -->
     </div>
 </header><!-- #header -->

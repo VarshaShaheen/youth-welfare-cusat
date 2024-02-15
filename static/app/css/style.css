@@ -61,20 +61,6 @@ h6 {
 .wow {
   visibility: hidden;
 }
-
-/* Prelaoder */
-
-#preloader {
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 999;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-  background: #fff url("../img/preloader.svg") no-repeat center center;
-}
-
 /* Back to top button */
 
 .back-to-top {
@@ -741,10 +727,6 @@ body.mobile-nav-active #mobile-nav-toggle {
   bottom: 0;
 }
 
-#speakers-details {
-  padding: 60px 0;
-}
-
 .heading-dept{
   color: #112363;
   font-size: 22px;
@@ -913,7 +895,6 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #venue .venue-info {
-  background: url("../img/venue-info-bg.jpg") top center no-repeat;
   background-size: cover;
   position: relative;
   padding-top: 60px;
@@ -1175,7 +1156,6 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #subscribe {
   padding: 60px;
-  background: url(../img/subscribe-bg.jpg) center center no-repeat;
   background-size: cover;
   overflow: hidden;
   position: relative;
@@ -1581,7 +1561,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   position: absolute;
   background-color: #00d084;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   z-index: 1;
   border-radius: 10px;
 }

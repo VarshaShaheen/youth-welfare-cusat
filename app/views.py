@@ -25,12 +25,12 @@ def news_detail(request, pk):
 
 
 def about_department(request):
-    return render(request, 'app/department.html')
+    return render(request, 'app/about/department.html')
 
 
 def about_director(request):
     directors = Director.objects.all()
-    return render(request, 'app/director.html', {'directors': directors})
+    return render(request, 'app/about/director.html', {'directors': directors})
 
 
 def current_program(request):
@@ -65,7 +65,7 @@ def annual_report_view(request):
 
 def grace_marks_view(request):
     grace_marks = GraceMarks.objects.all()
-    return render(request, 'app/academics/grace_marks.html', {'grace_marks': grace_marks})
+    return render(request, 'app/academics/../templates/app/disclosure/grace_marks.html', {'grace_marks': grace_marks})
 
 
 def program_detail_gallery(request, program_id):
