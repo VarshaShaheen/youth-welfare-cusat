@@ -2,15 +2,67 @@
 
 {% block content %}
     <div class="section-header">
-        <h2>Campus Radio</h2>
+        <h2>Cusat Radio</h2>
     </div>
     <div class="container mt-4">
         <div class="row">
             <div class="col">
-                 {% for info in infos %}
-                     {{ info.description | safe }}
+                {% for info in infos %}
+                    {{ info.description | safe }}
                 {% endfor %}
             </div>
+        </div>
+    </div>
+    <div class="container mt-4">
+        <h3>Management</h3>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Designation</th>
+                    <th>Mobile Number</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for info in infos %}
+                    <tr>
+                        <td>{{ info.management_name }}</td>
+                        <td>{{ info.management_designation }}</td>
+                        <td>{{ info.management_mobile_number }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="container mt-4">
+        <div class="table-responsive">
+            <h3>Radio Jockeys</h3>
+            {% for info in infos %}
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Mobile</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>{{ info.radio_jockey_name }}</td>
+                        <td>{{ info.radio_jockey_address }}</td>
+                        <td>{{ info.radio_jockey_contact_number }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <a href="{{ info.link_to_radio }}">
+                    <button class="about-btn mr-2 mt-3">Link to radio</button>
+                </a>
+                <a href="{{ info.link_to_youtube }}">
+                    <button class="about-btn mr-2 mt3">Youtube Link</button>
+                </a>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}

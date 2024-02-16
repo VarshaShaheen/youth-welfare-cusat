@@ -7,18 +7,24 @@
     <div class="container">
         <table class="table">
             <thead>
-                <tr>
-                    <th>Course</th>
-                    <th>Details</th>
-                </tr>
+            <tr>
+                <th>Course/Training</th>
+                <th>Duration and Time</th>
+                <th>Details</th>
+                <th>Report</th>
+                <th>Registration Link</th>
+            </tr>
             </thead>
             <tbody>
-                {% for course in courses %}
+            {% for course in courses %}
                 <tr>
                     <td>{{ course.name }}</td>
+                    <td>{{ course.duration_and_date }}</td>
                     <td><a href="{{ course.details.url }}" target="_blank">View Details</a></td>
+                    <td><a href="{{ course.report.url }}" target="_blank">View Report</a></td>
+                    <td><a href="{{ course.registration_link.url }}" target="_blank">Click to Register</a></td>
                 </tr>
-                {% endfor %}
+            {% endfor %}
             </tbody>
         </table>
     </div>

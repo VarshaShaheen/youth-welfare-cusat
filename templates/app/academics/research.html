@@ -5,11 +5,16 @@
         <h2>Research</h2>
     </div>
     <div class="container">
+    {% for research in researches %}
+    <p>Research Supervisor:{{ research.supervisor }}</p>
+    {% endfor %}
         <table class="table">
             <thead>
             <tr>
                 <th>Name</th>
                 <th>Research Area</th>
+                <th>Category</th>
+                <th>Department/University</th>
             </tr>
             </thead>
             <tbody>
@@ -17,6 +22,8 @@
                 <tr>
                     <td>{{ research.name }}</td>
                     <td>{{ research.research_area }}</td>
+                    <td>{{ research.category }}</td>
+                    <td>{{ research.department_or_university }}</td>
                 </tr>
             {% endfor %}
             </tbody>
