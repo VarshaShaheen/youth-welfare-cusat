@@ -245,3 +245,10 @@ class Courses(models.Model):
 
     def __str__(self):
         return self.course
+
+
+class Radio(models.Model):
+    description = CKEditor5Field(config_name='extends', null=True, blank=True)
+
+    def __str__(self):
+        return self.description
