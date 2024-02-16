@@ -3,7 +3,7 @@ from django.urls import path
 from .views import index, nss_units_view, campus_clubs, counselling_view, annual_report_view, grace_marks_view, \
     program_list, event_detail, news_detail, about_department, about_director, current_program, \
     program_detail, program_detail_gallery, contact_us, essential_info, feedback, show_orders, anti_ragging, \
-    student_aid_fund, research_view, union_view, health_centre_view, administration_view, courses_view
+    student_aid_fund, research_view, union_view, health_centre_view, administration_view, courses_view, radio_view
 
 urlpatterns = [
     path('', index, name='index'),
@@ -30,6 +30,7 @@ urlpatterns = [
     path('campus/union', union_view, name='union_view'),
     path('facilities/health-center', health_centre_view, name='health_centre_view'),
     path('about/administration', administration_view, name='administration_view'),
-    path('academics/courses', courses_view, name='courses_view')
+    path('academics/courses', courses_view, name='courses_view'),
+    path('campus/radio',radio_view, name='radio_view')
 
 ]

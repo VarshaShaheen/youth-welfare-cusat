@@ -130,3 +130,7 @@ def administration_view(request):
 def courses_view(request):
     courses = Courses.objects.all()
     return render(request,'app/academics/courses.html', {'courses':courses})
+
+
+def radio_view(request):
+    return render(request,'app/campus/radio.html')
