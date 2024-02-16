@@ -104,7 +104,11 @@ h6 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 90px !important;
+  margin-top: 90px;
+}
+
+.section-header-home{
+  margin-top: 20px !important;
 }
 
 .section-header::before {
