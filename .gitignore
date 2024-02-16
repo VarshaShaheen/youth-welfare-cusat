@@ -1,5 +1,4 @@
 venv
-**/migrations/0*
 **/pychache__*
 
 # Environments
