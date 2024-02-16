@@ -8,6 +8,7 @@ class NewsAndEvent(models.Model):
     last_date_registration = models.DateField()
     details_pdf = models.FileField(upload_to='events/details/')
     registration_link = models.URLField()
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title
@@ -23,6 +24,7 @@ class Event(models.Model):
     location = models.CharField(max_length=100, null=True, blank=True)
     contact = models.CharField(max_length=100, null=True, blank=True)
     registration_link = models.URLField(max_length=200, null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name
@@ -46,6 +48,7 @@ class NewsItem(models.Model):
     image = models.ImageField(upload_to='news_images/')
     description = CKEditor5Field(config_name='extends', null=True, blank=True)
     date_posted = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title
@@ -77,6 +80,7 @@ class CurrentProgramme(models.Model):
     registration_link = models.URLField(max_length=200, null=True, blank=True)
     organisers = models.CharField(max_length=255, null=True, blank=True)
     description = CKEditor5Field(config_name='extends', null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name
@@ -139,6 +143,7 @@ class Program(models.Model):
     name = models.CharField(max_length=255, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
     cover_image = models.ImageField(upload_to='program_covers/')
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name

@@ -6,9 +6,9 @@ from .models import NewsAndEvent, Event, Testimonial, NewsItem, Director, Curren
 
 def index(request):
     testimonials = Testimonial.objects.all()
-    news_and_events = NewsAndEvent.objects.all()
-    events = Event.objects.all()
-    news_items = NewsItem.objects.all().order_by('-date_posted')
+    news_and_events = NewsAndEvent.objects.all().order_by('-created_at')
+    events = Event.objects.all().order_by('-created_at')
+    news_items = NewsItem.objects.all().order_by('-created_at')
     return render(request, 'app/index.html',
                   {'news_and_events': news_and_events, 'events': events, 'testimonials': testimonials,
                    'news_items': news_items})
@@ -34,7 +34,7 @@ def about_director(request):
 
 
 def current_program(request):
-    programs = CurrentProgramme.objects.all()
+    programs = CurrentProgramme.objects.all().order_by('-created_at')
     return render(request, 'app/programme/current_program.html', {'programs': programs})
 
 
@@ -74,7 +74,7 @@ def program_detail_gallery(request, program_id):
 
 
 def program_list(request):
-    programs = Program.objects.all()
+    programs = Program.objects.all().order_by('-created_at')
     return render(request, 'app/gallery/program.html', {'programs': programs})
 
 
