@@ -7,8 +7,8 @@
     <div class="container mt-4">
         <div class="row">
             <div class="col">
-                {% for info in infos %}
-                    {{ info.description | safe }}
+                {% for detail in details %}
+                    {{ detail.description | safe }}
                 {% endfor %}
             </div>
         </div>
@@ -56,10 +56,12 @@
                     </tr>
                     </tbody>
                 </table>
-                <a href="{{ info.link_to_radio }}">
+            {% endfor %}
+            {% for detail in details %}
+                  <a href="{{ detail.link_to_radio }}">
                     <button class="about-btn mr-2 mt-3">Link to radio</button>
                 </a>
-                <a href="{{ info.link_to_youtube }}">
+                <a href="{{ detail.link_to_youtube }}">
                     <button class="about-btn mr-2 mt3">Youtube Link</button>
                 </a>
             {% endfor %}

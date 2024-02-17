@@ -206,7 +206,8 @@ class Research(models.Model):
     research_area = models.CharField(max_length=255)
     category = models.CharField(max_length=255, null=True, blank=True)
     department_or_university = models.CharField(max_length=255, null=True, blank=True)
-    supervisor = CKEditor5Field(config_name='extends', null=True, blank=True)
+    research_supervisor = models.CharField(max_length=255, null=True, blank=True)
+    status = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -254,15 +255,18 @@ class Courses(models.Model):
 
 
 class Radio(models.Model):
-    description = CKEditor5Field(config_name='extends', null=True, blank=True)
     management_name = models.CharField(max_length=255, null=True, blank=True)
     management_designation = models.CharField(max_length=255, null=True, blank=True)
     management_mobile_number = models.CharField(max_length=255, null=True, blank=True)
     radio_jockey_name = models.CharField(max_length=255, null=True, blank=True)
     radio_jockey_address = models.CharField(max_length=500, null=True, blank=True)
     radio_jockey_contact_number = models.CharField(max_length=255, null=True, blank=True)
-    link_to_radio = models.URLField(null=True, blank=True)
-    link_to_youtube = models.URLField(null=True, blank=True)
 
     def __str__(self):
-        return self.description
+        return self.management_name
+
+
+class radio_description_and_links(models.Model):
+    description = CKEditor5Field(config_name='extends', null=True, blank=True)
+    link_to_radio = models.URLField(null=True, blank=True)
+    link_to_youtube = models.URLField(null=True, blank=True)
