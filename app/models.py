@@ -208,6 +208,7 @@ class Research(models.Model):
     department_or_university = models.CharField(max_length=255, null=True, blank=True)
     research_supervisor = models.CharField(max_length=255, null=True, blank=True)
     status = models.CharField(max_length=255, null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name

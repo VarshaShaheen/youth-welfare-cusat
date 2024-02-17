@@ -108,7 +108,7 @@ def student_aid_fund(request):
 
 
 def research_view(request):
-    researches = Research.objects.all()
+    researches = Research.objects.all().order_by('-created_at')
     return render(request, 'app/academics/research.html', {'researches': researches})
 
 
