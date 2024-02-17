@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import NewsAndEvent, Event, Testimonial, NewsItem, Director, CurrentProgramme, CampusClubs, NssUnit, \
-    Counsellor, AnnualReport, GraceMarks, Alumni, EssentialInfo, UniversityOrder, Program, ProgramImage, AntiRagging, \
+    Counsellor, AnnualReport, GraceMarks, EssentialInfo, UniversityOrder, Program, ProgramImage, AntiRagging, \
     StudentAidFund, Research, Union, HealthCentre, Administration, Courses, RadioManagement, RadioJockey, radio_description_and_links
 
 
