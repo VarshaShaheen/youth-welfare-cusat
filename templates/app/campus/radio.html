@@ -39,26 +39,26 @@
     <div class="container mt-4">
         <div class="table-responsive">
             <h3>Radio Jockeys</h3>
-            {% for info in infos %}
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Address</th>
-                        <th>Mobile</th>
-                    </tr>
-                    </thead>
-                    <tbody>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Mobile</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for info in infos %}
                     <tr>
                         <td>{{ info.radio_jockey_name }}</td>
                         <td>{{ info.radio_jockey_address }}</td>
                         <td>{{ info.radio_jockey_contact_number }}</td>
                     </tr>
-                    </tbody>
-                </table>
-            {% endfor %}
+                {% endfor %}
+                </tbody>
+            </table>
             {% for detail in details %}
-                  <a href="{{ detail.link_to_radio }}">
+                <a href="{{ detail.link_to_radio }}">
                     <button class="about-btn mr-2 mt-3">Link to radio</button>
                 </a>
                 <a href="{{ detail.link_to_youtube }}">
