@@ -70,21 +70,10 @@ class ProgramAdmin(admin.ModelAdmin):
 
 admin.site.register(Program, ProgramAdmin)
 admin.site.register(ProgramImage)
-
-
-@admin.register(Alumni)
-class AlumniAdmin(admin.ModelAdmin):
-    list_display = ('name',)
-
-
 admin.site.register(EssentialInfo)
-
 admin.site.register(UniversityOrder)
-
 admin.site.register(AntiRagging)
-
 admin.site.register(StudentAidFund)
-
 admin.site.register(Research)
 
 

@@ -157,15 +157,6 @@ class ProgramImage(models.Model):
         return f"{self.program.name} Image"
 
 
-class Alumni(models.Model):
-    name = models.CharField(max_length=100, null=True, blank=True)
-    designation = models.CharField(max_length=100, null=True, blank=True)
-    photo = models.ImageField(upload_to='alumni_photos/')
-
-    def __str__(self):
-        return self.name
-
-
 class EssentialInfo(models.Model):
     authority = models.CharField(max_length=100, null=True, blank=True)
     phone = models.CharField(max_length=30, null=True, blank=True)
