@@ -254,13 +254,19 @@ class Courses(models.Model):
         return self.course
 
 
-class Radio(models.Model):
-    management_name = models.CharField(max_length=255, null=True, blank=True)
-    management_designation = models.CharField(max_length=255, null=True, blank=True)
-    management_mobile_number = models.CharField(max_length=255, null=True, blank=True)
+class RadioJockey(models.Model):
     radio_jockey_name = models.CharField(max_length=255, null=True, blank=True)
     radio_jockey_address = models.CharField(max_length=500, null=True, blank=True)
     radio_jockey_contact_number = models.CharField(max_length=255, null=True, blank=True)
+
+    def __str__(self):
+        return self.radio_jockey_name
+
+
+class RadioManagement(models.Model):
+    management_name = models.CharField(max_length=255, null=True, blank=True)
+    management_designation = models.CharField(max_length=255, null=True, blank=True)
+    management_mobile_number = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
         return self.management_name

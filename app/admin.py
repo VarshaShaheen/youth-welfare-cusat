@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import NewsAndEvent, Event, Testimonial, NewsItem, Director, CurrentProgramme, CampusClubs, NssUnit, \
     Counsellor, AnnualReport, GraceMarks, Alumni, EssentialInfo, UniversityOrder, Program, ProgramImage, AntiRagging, \
-    StudentAidFund, Research, Union, HealthCentre, Administration, Courses, Radio, radio_description_and_links
+    StudentAidFund, Research, Union, HealthCentre, Administration, Courses, RadioManagement, RadioJockey, radio_description_and_links
 
 
 @admin.register(NewsAndEvent)
@@ -108,5 +108,6 @@ class CoursesAdmin(admin.ModelAdmin):
     list_display = ('course',)
 
 
-admin.site.register(Radio)
+admin.site.register(RadioManagement)
+admin.site.register(RadioJockey)
 admin.site.register(radio_description_and_links)
