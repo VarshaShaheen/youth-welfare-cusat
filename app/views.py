@@ -135,4 +135,4 @@ def courses_view(request):
 def radio_view(request):
     infos = Radio.objects.all()
     details = radio_description_and_links.objects.all()
-    return render(request, 'app/campus/radio.html', {'infos': infos},{'details': details})
+    return render(request, 'app/campus/radio.html', {'infos': infos, 'details': details})
