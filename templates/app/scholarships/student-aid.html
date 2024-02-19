@@ -3,22 +3,53 @@
 {% block content %}
     <div class="section-header" style="margin-top: 90px">
         <h2>Student Aid Fund</h2>
+        <p>The Department will coordinate various scholarships / students aid fund for bonafide students of the
+            University, who have a good conduct and extra ordinary academic record, belonging to a weaker socio-
+            economic background, which are being offered by various agencies and departments. Students’ Welfare
+            Department will coordinate disbursement of scholarships / students aid fund for various eligible
+            students.</p>
     </div>
-    {% for info in infos %}
-        <div class="container">
-            <p>{{ info.description }}</p>
-            <a href="{{ info.order_pdf.url }}" target="_blank">
-                <button class="about-btn"> University Order
-                </button>
-            </a>
-             <a href="{{ info.awardees.url }}">
-                <button class="about-btn"> Notification
-                </button>
-            </a>
-            <a href="{{ info.awardees.url }}">
-                <button class="about-btn"> Awardees
-                </button>
-            </a>
+
+    <div class="container mt-4">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Description</th>
+                    <th scope="col">University Order</th>
+                    <th scope="col">Notification</th>
+                    <th scope="col">Awardees</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for info in infos %}
+                    <tr>
+                        <td>{{ info.description }}</td>
+                        <td>
+                            {% if info.order_pdf %}
+                                <a href="{{ info.order_pdf.url }}" target="_blank" class="btn about-btn">View</a>
+                            {% else %}
+                                <button class="btn about-btn" disabled>N/A</button>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if info.notification %}
+                                <a href="{{ info.notification.url }}" class="btn about-btn">View</a>
+                            {% else %}
+                                <button class="btn about-btn" disabled>N/A</button>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if info.awardees %}
+                                <a href="{{ info.awardees.url }}" class="btn about-btn">View</a>
+                            {% else %}
+                                <button class="btn about-btn" disabled>N/A</button>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
         </div>
-    {% endfor %}
+    </div>
 {% endblock %}
