@@ -151,17 +151,19 @@
         <h2>Testimonials</h2>
     </div>
     <section class="testimonial-container">
-        {% for testimonial in testimonials %}
-            <figure class="snip1192">
-                <blockquote>{{ testimonial.testimonial }}
-                </blockquote>
-                <div class="author">
+    {% for testimonial in testimonials %}
+        <figure class="snip1192">
+            <blockquote>{{ testimonial.testimonial }}
+            </blockquote>
+            <div class="author">
+                {% if testimonial.photo.url %}
                     <img src="{{ testimonial.photo.url }}" alt="sq-sample1"/>
-                    <h6>{{ testimonial.name }}<span>{{ testimonial.position }}</span></h6>
-                </div>
-            </figure>
-        {% endfor %}
-    </section>
+                {% endif %}
+                <h6>{{ testimonial.name }}<span>{{ testimonial.position }}</span></h6>
+            </div>
+        </figure>
+    {% endfor %}
+</section>
     {#testimonial end#}
 
     {#News Section#}
