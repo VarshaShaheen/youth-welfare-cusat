@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 
 from django.template.context_processors import media
+from django.contrib.messages import constants as messages
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-t7)=b8_3_4781nmjuvu&fa6i(-p@m=%$1$t%7+&@63!n9#6h6@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = [ 'welfare.cusat.ac.in', 'localhost', '127.0.0.1', ]
+ALLOWED_HOSTS = ['welfare.cusat.ac.in', 'localhost', '127.0.0.1', ]
 
 # Application definition
 
@@ -49,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
 ]
 
 ROOT_URLCONF = 'youth_welfare_cusat.urls'

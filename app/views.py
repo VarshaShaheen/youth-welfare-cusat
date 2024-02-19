@@ -1,7 +1,9 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import NewsAndEvent, Event, Testimonial, NewsItem, Director, CurrentProgramme, CampusClubs, NssUnit, \
     Counsellor, AnnualReport, GraceMarks, Program, EssentialInfo, UniversityOrder, AntiRagging, StudentAidFund, \
     Research, Union, HealthCentre, Administration, Courses, RadioManagement, RadioJockey, radio_description_and_links
+from .forms import TestimonialForm
+from django.contrib import messages
 
 
 def index(request):
@@ -128,7 +130,7 @@ def administration_view(request):
 
 
 def courses_view(request):
-    courses = Courses.objects.all()
+    courses = Courses.objects.all().order_by('-created_at')
     return render(request, 'app/academics/courses.html', {'courses': courses})
 
 
@@ -137,3 +139,16 @@ def radio_view(request):
     jockeys = RadioJockey.objects.all()
     details = radio_description_and_links.objects.all()
     return render(request, 'app/campus/radio.html', {'managements': managements, 'details': details, 'jockeys': jockeys})
+
+
+def add_testimonial(request):
+    if request.method == 'POST':
+        form = TestimonialForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your feedback added successfully!')  # Add success message
+            return redirect('add_testimonial')  # Redirect back to the form or wherever you like
+    else:
+        form = TestimonialForm()
+    return render(request, 'app/about/testimonial.html', {'form': form})
+

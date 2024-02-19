@@ -34,10 +34,10 @@ class Event(models.Model):
 
 
 class Testimonial(models.Model):
-    name = models.CharField(max_length=200, null=True, blank=True)
-    position = models.CharField(max_length=200, null=True, blank=True)
-    image = models.ImageField(upload_to='testimonials_images/')
-    comment = models.TextField(null=True, blank=True)
+    name = models.CharField(max_length=100, null=True, blank=True)
+    position = models.CharField(max_length=100, null=True, blank=True)
+    photo = models.ImageField(upload_to='testimonials_photos/', null=True, blank=True)
+    testimonial = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -241,6 +241,7 @@ class Courses(models.Model):
     details = models.FileField(upload_to='courses/', null=True, blank=True)
     report = models.FileField(upload_to='courses/', null=True, blank=True)
     registration_link = models.URLField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.course

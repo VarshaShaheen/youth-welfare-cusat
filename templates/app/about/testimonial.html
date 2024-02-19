@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="section-header" style="margin-top: 75px">
+    <h2>Add Testimonial</h2>
+</div>
+<div class="form container mb-5">
+    <form method="post" enctype="multipart/form-data" class="contactForm">
+        {% csrf_token %}
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="name">Your Name</label>
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="position">Your Position</label>
+                <input type="text" name="position" class="form-control" id="position" placeholder="Your Position" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="photo">Photo</label>
+            <input type="file" name="photo" class="form-control-file" id="photo" required>
+        </div>
+        <div class="form-group">
+            <label for="testimonial">Your Testimonial</label>
+            <textarea name="testimonial" class="form-control" id="testimonial" rows="5" placeholder="Your Testimonial" required></textarea>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="about-btn">Submit Testimonial</button>
+        </div>
+    </form>
+</div>
+
+{% if messages %}
+<script type="text/javascript">
+    window.onload = function() {
+        {% for message in messages %}
+        alert("{{ message }}");
+        {% endfor %}
+    }
+</script>
+{% endif %}
+
+{% endblock %}
