@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-t7)=b8_3_4781nmjuvu&fa6i(-p@m=%$1$t%7+&@63!n9#6h6@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['welfare.cusat.ac.in', 'localhost', '127.0.0.1', ]
 
