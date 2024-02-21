@@ -8,39 +8,44 @@
                 <h2>Programs</h2>
             </div>
             <div class="container mt-4">
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Date</th>
-                        <th>Application / Report</th>
-                        <th>Registration Link</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {% for programme in programs %}
+                <!-- Scrollable container for the table -->
+                <div class="scrollable-table">
+                    <table class="table">
+                        <thead>
                         <tr>
-                            <td>{{ programme.name }}</td>
-                            <td>{{ programme.date }}</td>
-                            <td>
-                                {% if programme.report %}
-                                    <a href="{{ programme.report.url }}">View Report</a>
-                                {% else %}
-                                    No Report
-                                {% endif %}
-                            </td>
-                            <td>
-                                {% if programme.registration_link %}
-                                    <a href="{% url 'program_detail' pk=programme.pk %}" class="about-btn">Click to Register</a>
-                                {% else %}
-                                    Registration Closed
-                                {% endif %}
-                            </td>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Application / Report</th>
+                            <th>Registration Link</th>
                         </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                        {% for programme in programs %}
+                            <tr>
+                                <td>{{ programme.name }}</td>
+                                <td>{{ programme.date }}</td>
+                                <td>
+                                    {% if programme.report %}
+                                        <a href="{{ programme.report.url }}">View Report</a>
+                                    {% else %}
+                                        No Report
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if programme.registration_link %}
+                                        <a href="{% url 'program_detail' pk=programme.pk %}" class="about-btn">Click to
+                                            Register</a>
+                                    {% else %}
+                                        Registration Closed
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
             </div>
+
 
         </div>
     </section>
