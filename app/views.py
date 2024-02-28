@@ -95,7 +95,7 @@ def feedback(request):
 
 
 def show_orders(request):
-    orders = UniversityOrder.objects.all()
+    orders = UniversityOrder.objects.all().order_by('-created_at')
     return render(request, 'app/disclosure/orders.html', {'orders': orders})
 
 

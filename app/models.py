@@ -169,6 +169,7 @@ class EssentialInfo(models.Model):
 class UniversityOrder(models.Model):
     name = models.CharField(max_length=255)
     order_pdf = models.FileField(upload_to='orders/')
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name
