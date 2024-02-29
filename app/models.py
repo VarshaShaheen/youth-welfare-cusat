@@ -270,3 +270,9 @@ class radio_description_and_links(models.Model):
     description = CKEditor5Field(config_name='extends', null=True, blank=True)
     link_to_radio = models.URLField(null=True, blank=True)
     link_to_youtube = models.URLField(null=True, blank=True)
+
+
+class SargamResults(models.Model):
+    individual_results = models.FileField(upload_to='sargam_results/', null=True, blank=True)
+    group_results = models.FileField(upload_to='sargam_results/', null=True, blank=True)
+

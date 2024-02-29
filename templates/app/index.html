@@ -100,6 +100,12 @@
                     </p>
                 </div>
                 <div class="col-lg-3">
+                    <h3>Sargam Results</h3>
+                    {% for result in sargam_results %}
+                        <a href="{{ result.individual_results.url }}" class="scrollto about-btn" target="_blank">Individual Items</a>
+                        <a href="{{ result.group_results.url }}" class="scrollto about-btn">Group Items</a>
+                        <hr>
+                    {% endfor %}
                     <h3>News and Events</h3>
                     {% for news_and_event in news_and_events %}
                         <p class="news-heading">{{ news_and_event.title }}</p>

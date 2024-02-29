@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import NewsAndEvent, Event, Testimonial, NewsItem, Director, CurrentProgramme, CampusClubs, NssUnit, \
     Counsellor, AnnualReport, GraceMarks, Program, EssentialInfo, UniversityOrder, AntiRagging, StudentAidFund, \
-    Research, Union, HealthCentre, Administration, Courses, RadioManagement, RadioJockey, radio_description_and_links
+    Research, Union, HealthCentre, Administration, Courses, RadioManagement, RadioJockey, radio_description_and_links, \
+    SargamResults
 from .forms import TestimonialForm
 from django.contrib import messages
 
@@ -11,9 +12,10 @@ def index(request):
     news_and_events = NewsAndEvent.objects.all().order_by('-created_at')
     events = Event.objects.all().order_by('-created_at')
     news_items = NewsItem.objects.all().order_by('-created_at')
+    sargam_results = SargamResults.objects.all()
     return render(request, 'app/index.html',
                   {'news_and_events': news_and_events, 'events': events, 'testimonials': testimonials,
-                   'news_items': news_items})
+                   'news_items': news_items, 'sargam_results': sargam_results})
 
 
 def event_detail(request, event_name):
@@ -138,7 +140,8 @@ def radio_view(request):
     managements = RadioManagement.objects.all()
     jockeys = RadioJockey.objects.all()
     details = radio_description_and_links.objects.all()
-    return render(request, 'app/campus/radio.html', {'managements': managements, 'details': details, 'jockeys': jockeys})
+    return render(request, 'app/campus/radio.html',
+                  {'managements': managements, 'details': details, 'jockeys': jockeys})
 
 
 def add_testimonial(request):
@@ -151,4 +154,3 @@ def add_testimonial(request):
     else:
         form = TestimonialForm()
     return render(request, 'app/about/testimonial.html', {'form': form})
-
