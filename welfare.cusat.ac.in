@@ -1,0 +1,59 @@
+server {
+    server_name welfare.cusat.ac.in;
+
+    listen 80;
+    listen [::]:80;
+
+    # Compression settings
+    gzip on;
+    gzip_vary on;
+    gzip_proxied any;
+    gzip_types text/plain text/css application/json application/javascript application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+    gzip_comp_level 6;
+
+    # Security headers
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-Content-Type-Options "nosniff";
+    add_header X-XSS-Protection "1; mode=block";
+    add_header Referrer-Policy "no-referrer-when-downgrade";
+
+    location /static/ {
+        alias /home/varsha/youth-welfare-cusat/static/;
+        expires 1d;
+        add_header Cache-Control "public, max-age=86400";
+    }
+
+    location /media/ {
+        expires 1d;
+        add_header Cache-Control "public, max-age=86400";
+        alias /home/varsha/youth-welfare-cusat/media/;
+    }
+
+    location / {
+        proxy_pass http://localhost:8008;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_set_header Host $host;
+
+        # Caching
+        proxy_cache my_cache;
+        proxy_cache_valid 200 302 60m;
+        proxy_cache_valid 404 1m;
+        proxy_cache_use_stale error timeout updating http_500 http_502 http_503 http_504;
+    }
+
+    location /admin {
+        # Exclude /admin from caching
+        proxy_pass http://localhost:8008/admin;
+    }
+
+    # Logging
+    access_log /var/log/nginx/welfare.cusat.ac.in.access.log;
+    error_log /var/log/nginx/welfare.cusat.ac.in.error.log;
+
+    # Prevent server from processing requests for unknown hostnames
+    if ($host != 'welfare.cusat.ac.in') {
+        return 444;
+    }
+}
